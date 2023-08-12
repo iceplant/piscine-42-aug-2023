@@ -6,28 +6,31 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 11:48:45 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/12 12:43:59 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/12 13:39:09 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_put_top_or_bottom(int x, int y)
 {
 	int	i;
 
-	if (x == 0 || y == 0)
-		return ;
-	write(1, "o", 1);
+	ft_putchar('A');
 	i = 0;
 	while (i < x - 2)
 	{
-		write(1, "-", 1);
+		ft_putchar('B');
 		i++;
 	}
 	if (x > 1)
-		write(1, "o", 1);
-	write(1, "\n", 1);
+		ft_putchar('C');
+	ft_putchar('\n');
 }
 
 void	ft_put_middle(int x, int y)
@@ -36,16 +39,16 @@ void	ft_put_middle(int x, int y)
 
 	if (x == 0 || y == 0)
 		return ;
-	write(1, "|", 1);
+	ft_putchar('B');
 	i = 0;
 	while (i < x - 2)
 	{
-		write(1, " ", 1);
+		ft_putchar(' ');
 		i++;
 	}
 	if (x > 1)
-		write(1, "|", 1);
-	write(1, "\n", 1);
+		ft_putchar('B');
+	ft_putchar('\n');
 }
 
 void	rush(int x, int y)

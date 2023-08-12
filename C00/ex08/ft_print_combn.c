@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 19:14:10 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/12 12:05:27 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/12 12:11:49 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,16 @@ int	ft_strlen(char *str)
 	return (n);
 }
 
-void	ft_putstr(char *str)
+// n = length of array
+void	ft_putstr(char *str, int n)
 {
-	write(1, str, ft_strlen(str));
+	write(1, str, n);
 	write(1, ", ", 2);
 }
 
 void	ft_print_combn(int n)
 {
-	char	vals[n];
+	char	vals[10];
 	int		i;
 	char	w;
 	int		count;
@@ -47,11 +48,11 @@ void	ft_print_combn(int n)
 	i = n - 1;
 	while (vals[0] != 9 - n + 1 + '0')
 	{
-		ft_putstr(vals);
+		ft_putstr(vals, n);
 		while (vals[n - 1] < '9')
 		{
 			vals[n - 1] = vals[n - 1] + 1;
-			ft_putstr(vals);
+			ft_putstr(vals, n);
 		}
 		while (vals[i] == 9 - n + i + 1 + '0')
 		{
@@ -65,5 +66,5 @@ void	ft_print_combn(int n)
 		}
 		count++;
 	}
-	write(1, vals, ft_strlen(vals));
+	write(1, vals, n);
 }

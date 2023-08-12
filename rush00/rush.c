@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 11:48:45 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/12 11:48:47 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/12 11:59:05 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,4 @@ void	rush(int x, int y)
 	}
 	if (y > 1)
 		ft_put_top_or_bottom(x, y);
-}
-
-int	main(void)
-{
-	write(1, "rush(5,3): \n", 12);
-	rush(5, 3);
-	write(1, "rush(5,1): \n", 12);
-	rush(5, 1);
-	write(1, "rush(1,1): \n", 12);
-	rush(1, 1);
-	write(1, "rush(1,5): \n", 12);
-	rush(1, 5);
-	write(1, "rush(4,4): \n", 12);
-	rush(4, 4);
 }

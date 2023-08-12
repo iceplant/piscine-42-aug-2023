@@ -6,14 +6,17 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 11:48:45 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/12 15:06:17 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/12 17:31:48 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+// since we're compiling everything together, we prototype the function like
+// this so it is useable in this file.
 void	ft_putchar(char c);
 
+// Prints top or bottom row of the rectangle
 void	ft_put_top_or_bottom(int x)
 {
 	int	i;
@@ -30,6 +33,7 @@ void	ft_put_top_or_bottom(int x)
 	ft_putchar('\n');
 }
 
+//prints a middle row of the rectangle (other function handles top/bottom)
 void	ft_put_middle(int x)
 {
 	int	i;
@@ -46,6 +50,7 @@ void	ft_put_middle(int x)
 	ft_putchar('\n');
 }
 
+// function specified in doc that will be called from main
 void	rush(int x, int y)
 {
 	int	i;

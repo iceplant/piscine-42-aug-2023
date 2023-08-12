@@ -6,18 +6,15 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 11:48:45 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/12 13:39:09 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/12 15:06:17 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
-void	ft_put_top_or_bottom(int x, int y)
+void	ft_put_top_or_bottom(int x)
 {
 	int	i;
 
@@ -33,12 +30,10 @@ void	ft_put_top_or_bottom(int x, int y)
 	ft_putchar('\n');
 }
 
-void	ft_put_middle(int x, int y)
+void	ft_put_middle(int x)
 {
 	int	i;
 
-	if (x == 0 || y == 0)
-		return ;
 	ft_putchar('B');
 	i = 0;
 	while (i < x - 2)
@@ -55,13 +50,13 @@ void	rush(int x, int y)
 {
 	int	i;
 
-	ft_put_top_or_bottom(x, y);
+	ft_put_top_or_bottom(x);
 	i = 0;
 	while (i < y - 2)
 	{
-		ft_put_middle(x, y);
+		ft_put_middle(x);
 		i++;
 	}
 	if (y > 1)
-		ft_put_top_or_bottom(x, y);
+		ft_put_top_or_bottom(x);
 }

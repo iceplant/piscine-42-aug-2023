@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:40:17 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/13 12:05:19 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/13 12:58:58 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ int	main(void)
 {
 	
 	eval_vals(5, 3, 0);
-	eval_vals(5, 1, 1);
-	eval_vals(1, 1, 2);
-	eval_vals(1, 5, 3);
-	eval_vals(4, 4, 4);
+	eval_vals(5, 1, 0);
+	eval_vals(1, 1, 0);
+	eval_vals(1, 5, 0);
+	eval_vals(4, 4, 0);
 
 
 	/*

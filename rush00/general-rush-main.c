@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:40:17 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/12 19:34:32 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/13 12:05:19 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,17 @@ void	eval_vals(int x, int y, int option)
 {
 	char	char_x;
 	char	char_y;
+	char char_option;
 
 	char_x = x + '0';
 	char_y = y + '0';
+	char_option = option + '0';
 	write(1, "rush(", 5);
 	write(1, &char_x, 1);
 	write(1, ", ", 2);
 	write(1, &char_y, 1);
+	write(1, ", ", 2);
+	write(1, &char_option, 1);
 	write(1, ")\n", 2);
 	general_rush(x, y, option);
 	write(1, "\n", 1);
@@ -40,12 +44,14 @@ void	eval_vals(int x, int y, int option)
 //main method, runs our test cases
 int	main(void)
 {
+	
 	eval_vals(5, 3, 0);
 	eval_vals(5, 1, 1);
 	eval_vals(1, 1, 2);
 	eval_vals(1, 5, 3);
 	eval_vals(4, 4, 4);
-	
+
+
 	/*
 	rush(5, 3);
 	ft_putchar('\n');

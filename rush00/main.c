@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:40:17 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/12 17:34:28 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/13 12:18:17 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ int	main(void)
 	eval_vals(1, 1);
 	eval_vals(1, 5);
 	eval_vals(4, 4);
+	eval_vals(3, 5);
+	eval_vals(80, 80);
+	eval_vals(20, 3);
+
+	/*
 	rush(5, 3);
 	ft_putchar('\n');
 	rush(5, 1);
@@ -54,5 +59,7 @@ int	main(void)
 	rush(1, 5);
 	ft_putchar('\n');
 	rush(4, 4);
+	*/
+
 	return (0);
 }

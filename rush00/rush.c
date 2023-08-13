@@ -33,7 +33,7 @@ void	ft_put_top_or_bottom(int x)
 	ft_putchar('\n');
 }
 
-//prints a middle row of the rectangle (other function handles top/bottom)
+// prints a middle row of the rectangle (other function handles top/bottom)
 void	ft_put_middle(int x)
 {
 	int	i;

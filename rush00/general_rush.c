@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 11:48:45 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/13 13:07:34 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/13 13:25:22 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ft_put_row(int x, char left, char middle, char right)
 }
 
 char	g_characters[5][7] = {{'o', '-', 'o', '|', 'o', '-', 'o'}, {'/', '*',
-		'\\', '*', '\\', '*', '/'}, {'A', 'B', 'A', 'B', 'C', 'B', 'C'}, {'A',
-		'B', 'C', 'B', 'A', 'B', 'C'}, {'A', 'B', 'C', 'B', 'C', 'B', 'A'}};
+	'\\', '*', '\\', '*', '/'}, {'A', 'B', 'A', 'B', 'C', 'B', 'C'}, {'A',
+	'B', 'C', 'B', 'A', 'B', 'C'}, {'A', 'B', 'C', 'B', 'C', 'B', 'A'}};
 
 void	general_rush(int x, int y, int option)
 {

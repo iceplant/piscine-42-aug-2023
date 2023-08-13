@@ -32,12 +32,12 @@ void	ft_put_row(int x, char left, char middle, char right)
 }
 
 char	g_characters[5][7] = {{'o', '-', 'o', '|', 'o', '-', 'o'}, {'/', '*',
-	'\\', '*', '\\', '*', '/'}, {'A', 'B', 'A', 'B', 'C', 'B', 'C'}, {'A',
-	'B', 'C', 'B', 'A', 'B', 'C'}, {'A', 'B', 'C', 'B', 'C', 'B', 'A'}};
+		'\\', '*', '\\', '*', '/'}, {'A', 'B', 'A', 'B', 'C', 'B', 'C'}, {'A',
+		'B', 'C', 'B', 'A', 'B', 'C'}, {'A', 'B', 'C', 'B', 'C', 'B', 'A'}};
 
 void	general_rush(int x, int y, int option)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	ft_putchar('\n');

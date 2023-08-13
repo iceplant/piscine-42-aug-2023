@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:40:17 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/13 12:58:58 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/13 13:14:33 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,18 @@ void	eval_vals(int x, int y, int option)
 //main method, runs our test cases
 int	main(void)
 {
-	
-	eval_vals(5, 3, 0);
-	eval_vals(5, 1, 0);
-	eval_vals(1, 1, 0);
-	eval_vals(1, 5, 0);
-	eval_vals(4, 4, 0);
+	int	option;
 
+ 	option	 = 0;
+	while (option < 5)
+	{
+		eval_vals(5, 3, option);
+		eval_vals(5, 1, option);
+		eval_vals(1, 1, option);
+		eval_vals(1, 5, option);
+		eval_vals(4, 4, option);
+		option++;
+	}
 
-	/*
-	rush(5, 3);
-	ft_putchar('\n');
-	rush(5, 1);
-	ft_putchar('\n');
-	rush(1, 1);
-	ft_putchar('\n');
-	rush(1, 5);
-	ft_putchar('\n');
-	rush(4, 4);*/
 	return (0);
 }

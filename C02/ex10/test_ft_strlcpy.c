@@ -13,10 +13,11 @@ void test(int size) {
     printf("Copied '%s' into '%s', length %d\n",
             str,
             buffer,
-            r
+            size
           );
 }
 int main(void) {
+	printf("Remember, man strlcpy says size should include the terminating null pointer!");
 	test(19);
     test(10);
     test(1);

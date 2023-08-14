@@ -22,9 +22,22 @@ void test2(void) {
 	printf("After: \ndest: %s, src: %s", dest, src);
 }
 
+
+void test3(void) {
+	char *src = "abcde";
+	char *dest;
+	printf("\n\n\nTest 3: \n");
+	printf("Before: \ndest: %s, src: %s\n", dest, src);
+	ft_strcpy(dest, src);
+	printf("After: \ndest: %s, src: %s", dest, src);
+}
+
+
+
 int main(void) {
-	test1();
+	test3();
 	test2();
+	test1();
 	return (0);
 	
 }

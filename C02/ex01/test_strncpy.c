@@ -8,7 +8,7 @@ void test1(void) {
 	char dest[] = "zywse"; //THIS IS DIFFERENT THAN DEFINING A STRING!!!!
 	printf("\n\n\nTest 1: \n");
 	printf("Before: \ndest: %s, src: %s, n=5\n", dest, src);
-	ft_strncpy(dest, src, 5u);
+	ft_strncpy(dest, src, 5);
 	printf("After: \ndest: %s, src: %s", dest, src);
 }
 
@@ -39,7 +39,7 @@ void test4(void) {
 	char *dest = (char *) malloc(5);
 	printf("\n\n\nTest 4: \n");
 	printf("Before: \ndest: %s, src: %s, n=10\n", dest, src);
-	ft_strncpy(dest, src, 10u);
+	ft_strncpy(dest, src, 2);
 	printf("After: \ndest: %s, src: %s", dest, src);
 }
 

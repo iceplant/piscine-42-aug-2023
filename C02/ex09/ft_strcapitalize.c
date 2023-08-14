@@ -6,13 +6,20 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 12:36:00 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/14 12:49:51 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/14 19:48:35 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_is_alphanumeric(char c)
 {
 	if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
+int	ft_is_lowercase(char c)
+{
+	if (c >= 'a' && c <= 'z')
 		return (1);
 	return (0);
 }
@@ -31,7 +38,7 @@ char	*ft_strcapitalize(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (ft_is_alphanumeric(str[i]))
+		if (ft_is_lowercase(str[i]))
 		{
 			if (i == 0 || !ft_is_alphanumeric(str[i - 1]))
 				str[i] -= 32;

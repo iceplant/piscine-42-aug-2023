@@ -12,7 +12,7 @@
 
 int	ft_char_is_uppercase(char c)
 {
-	if (c - 'A' >= 0  && 'Z' - c >= 0)
+	if (c - 'A' >= 0 && 'Z' - c >= 0)
 		return (1);
 	return (0);
 }

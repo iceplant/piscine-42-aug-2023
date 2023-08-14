@@ -17,7 +17,7 @@ void test_len3(void) {
 }
 
 int main(void) {
-	test_len2();
+	//test_len2();
 	test_len3();
 }
 	

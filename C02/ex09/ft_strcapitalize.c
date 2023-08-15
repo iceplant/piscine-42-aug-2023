@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 12:36:00 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/15 13:31:32 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/15 17:25:37 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,29 @@ int	ft_is_alphanumeric(char c)
 
 int	ft_is_lowercase(char c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
+	return (c >= 'a' && c <= 'z');
+}
+
+char	ft_charlowcase(char c)
+{
+	if (c >= 'A' && c <= 'Z')
+	{
+		return (c + 32);
+	}
+	return (c);
+}
+
+char	*ft_strlowcase(char *str)
+{
+	int	iter;
+
+	iter = 0;
+	while (str[iter] != '\0')
+	{
+		str[iter] = ft_charlowcase(str[iter]);
+		iter++;
+	}
+	return (str);
 }
 
 /*
@@ -37,6 +57,7 @@ char	*ft_strcapitalize(char *str)
 	int	i;
 
 	i = 0;
+	ft_strlowcase(str);
 	while (str[i] != '\0')
 	{
 		if (ft_is_lowercase(str[i]))

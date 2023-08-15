@@ -6,34 +6,39 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:53:26 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/15 17:59:03 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/15 12:59:04 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	digit_to_hex(int d)
+void	ft_write_char_hex_code_helper(char c)
 {
-	if (d > 9)
-		return (d + 'a' - 10);
+	int		div;
+	int		mod;
+	char	last_digit_char;
+
+	if (c == 0)
+		return ;
+	div = c / 16;
+	mod = c % 16;
+	if (mod > 9)
+		last_digit_char = mod + 'a' - 10;
 	else
-		return (d + '0');
+		last_digit_char = mod + '0';
+	ft_write_char_hex_code_helper(div);
+	write(1, &last_digit_char, 1);
 }
 
 void	ft_write_char_hex_code(char c)
 {
-	int		divisor;
-	int		mod;
-	char	d1;
-	char	d2;
-
-	divisor = c / 16;
-	mod = c % 16;
-	d1 = digit_to_hex(divisor);
-	d2 = digit_to_hex(mod);
-	write(1, "\\", 1);
-	write(1, &d1, 1);
-	write(1, &d2, 1);
+	if (c == 0)
+		write(1, "0", 1);
+	else
+	{
+		write(1, "\\", 1);
+		ft_write_char_hex_code_helper(c);
+	}
 }
 
 void	ft_putstr_non_printable(char *str)

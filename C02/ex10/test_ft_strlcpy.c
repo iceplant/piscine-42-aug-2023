@@ -16,11 +16,35 @@ void test(int size) {
             size
           );
 }
+
+void test2(int size)
+{
+    char string[] = "Hello there, Venus";
+    char buffer[19];
+    int r;
+
+    r = ft_strlcpy(buffer,string,size);
+
+    printf("Copied '%s' into '%s', length %d\n",
+            string,
+            buffer,
+            r
+          );
+}
+
+
+
 int main(void) {
 	printf("Remember, man strlcpy says size should include the terminating null pointer!");
 	test(19);
     test(10);
     test(1);
     test(0);
+
+	test2(19);
+	test2(10);
+	test2(1);
+	test2(0);
+
     return(0);
 }

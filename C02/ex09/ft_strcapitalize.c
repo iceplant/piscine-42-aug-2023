@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 12:36:00 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/14 19:48:35 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/15 12:37:27 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_is_lowercase(char c)
  *From examples, I assume this function shoudl capitalize every alphanumeric
  *character succceeding a non-alphanumeric character
  *
- *C does lazy evaluation so the || statement is safe
+ *C does lazy evaluation so the || statement is oke
  *
  **/
 char	*ft_strcapitalize(char *str)

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 19:10:11 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/15 19:14:27 by rokamen-         ###   ########.fr       */
+/*   Created: 2023/08/15 19:19:33 by rokamen-          #+#    #+#             */
+/*   Updated: 2023/08/15 19:22:48 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	int	diter;
 	int	siter;
@@ -21,7 +21,7 @@ char	*ft_strcat(char *dest, char *src)
 	{
 		diter++;
 	}
-	while (src[siter] != '\0')
+	while (src[siter] != '\0' && siter < nb)
 	{
 		dest[diter] = src[siter];
 		diter++;

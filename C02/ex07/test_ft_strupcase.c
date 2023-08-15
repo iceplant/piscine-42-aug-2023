@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int main(void) {
-	char str[] = "abcde123";
-	printf("Make abasdgaAAAGDScde123 upper case: %s\n", ft_strupcase(str));
+	char str[] = "abasdgaAAAGDScde123";
+	printf("Make %s upper case: ", str);
+	printf("%s\n", ft_strupcase(str));
 }

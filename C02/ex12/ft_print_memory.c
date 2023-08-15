@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
 void	ft_write_char_hex_code_helper(char c)
 {
@@ -42,33 +42,42 @@ void	ft_write_char_hex_code(char c)
 	}
 }
 
-void *ft_print_memory(void *addr, unsigned int size) {
-	if (size == 0) return 0;
+void	*ft_print_memory(void *addr, unsigned int size)
+{
+	int		iter;
+	char	*char_addr;
+	int		iter2;
+	int		iter3;
 
-	int iter;
+	if (size == 0)
+		return (0);
 	iter = 0;
-	char *char_addr = (char *) addr;
-	while (iter < size) {
+	char_addr = (char *)addr;
+	while (iter < size)
+	{
 		printf("iter: %d ", iter);
 		printf(" %p: ", char_addr + iter);
-		int iter2 = iter;
-		while (iter2 < iter + 16 ) {
-			if (iter2 < size) {
-				printf("%x%x ", char_addr[iter2], char_addr[iter2+1]);
-			} else {
+		iter2 = iter;
+		while (iter2 < iter + 16)
+		{
+			if (iter2 < size)
+			{
+				printf("%x%x ", char_addr[iter2], char_addr[iter2 + 1]);
+			}
+			else
+			{
 				printf("     ");
 			}
 			iter2 += 2;
 		}
-		int iter3 = iter;
-		while (iter3 < iter + 16) {
+		iter3 = iter;
+		while (iter3 < iter + 16)
+		{
 			printf("%c", char_addr[iter3]);
 			iter3++;
 		}
 		printf("\n");
 		iter += 16;
 	}
-
-	return 0;
+	return (0);
 }
-

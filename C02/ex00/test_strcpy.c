@@ -22,20 +22,21 @@ void test2(void) {
 	printf("After: \ndest: %s, src: %s", dest, src);
 }
 
-
+// this should segfault! defining an array like this makes it immutable too!
 void test3(void) {
 	char *src = "abcde";
 	char *dest;
+  	dest	= "abcde"; 
 	printf("\n\n\nTest 3: \n");
 	printf("Before: \ndest: %s, src: %s\n", dest, src);
 	ft_strcpy(dest, src);
-	printf("After: \ndest: %s, src: %s", dest, src);
+	//printf("After: \ndest: %s, src: %s", dest, src);
 }
 
 
 
 int main(void) {
-	test3();
+	// test3();
 	test2();
 	test1();
 	return (0);

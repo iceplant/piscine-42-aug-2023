@@ -6,12 +6,10 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 20:43:02 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/16 14:24:03 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/16 14:30:18 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-//
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;

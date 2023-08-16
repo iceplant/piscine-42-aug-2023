@@ -12,7 +12,7 @@
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	diter;
+	int				diter;
 	unsigned int	siter;
 
 	diter = 0;

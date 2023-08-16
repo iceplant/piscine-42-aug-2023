@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main() {
-	char c = '\n';
+	//char c = '\n';
 	//printf("\n\\n hex code is written as: ");
 	//ft_write_char_hex_code(c);	
 

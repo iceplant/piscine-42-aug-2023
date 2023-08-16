@@ -6,14 +6,14 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:19:33 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/15 19:22:48 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/16 13:53:34 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	int	diter;
-	int	siter;
+	unsigned int	siter;
 
 	diter = 0;
 	siter = 0;

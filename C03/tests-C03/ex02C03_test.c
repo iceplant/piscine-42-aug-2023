@@ -9,6 +9,4 @@ int main(void) {
 	ft_strcat(str2, str1);
 	assert(strcmp(str2, "qwertabcde") == 0);
 	//printf("%s", str2);
-
-
 }

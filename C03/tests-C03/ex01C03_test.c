@@ -27,12 +27,12 @@ int main(void) {
 
 	/*
 	printf("%d\n", ft_strncmp(a,d,10)); // d = 100
-    printf("%d\n", ft_strncmp(d,a,10)); // d = 100
+    printf("%d\n", ft_strncmp(d,a,10)); // d = 100 */
 
 
 	printf("ft d a 3 %d\n", ft_strncmp(d,a, 3));
 	printf("original d a 3 %d\n", strncmp(d,a,3));
-    printf("%d\n", ft_strncmp(d,a, 1)); */
+    printf("%d\n", ft_strncmp(d,a, 1)); 
 
 	assert(strncmp(d,a,10) == ft_strncmp(d,a,10));
 	assert(strncmp(d,a,3) == ft_strncmp(d,a,3));

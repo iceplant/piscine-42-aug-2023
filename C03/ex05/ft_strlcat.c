@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:59:40 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/15 21:19:39 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/16 14:26:56 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	ft_strlen(char *str)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	dlen;
-	int	slen;
-	int	i;
+	unsigned int	dlen;
+	unsigned int	slen;
+	unsigned int	i;
 
 	dlen = ft_strlen(src);
 	slen = ft_strlen(dest);

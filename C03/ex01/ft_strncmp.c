@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 20:43:02 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/16 13:25:58 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/16 14:24:03 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -14,7 +14,7 @@
 //
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))

@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 13:05:38 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/15 14:25:55 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/16 15:45:48 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	char_addr = (char *)addr;
 	while (iter < size)
 	{
-		printf("iter: %d ", iter);
 		printf(" %p: ", char_addr + iter);
 		iter2 = iter;
 		while (iter2 < iter + 16)
@@ -73,11 +72,13 @@ void	*ft_print_memory(void *addr, unsigned int size)
 		iter3 = iter;
 		while (iter3 < iter + 16)
 		{
-			printf("%c", char_addr[iter3]);
+			if (char_addr[iter3] > ' ' && char_addr[iter3] < '~')	
+				printf("%c", char_addr[iter3]);
+			else printf(".");
 			iter3++;
 		}
 		printf("\n");
 		iter += 16;
 	}
-	return (0);
+	return (addr);
 }

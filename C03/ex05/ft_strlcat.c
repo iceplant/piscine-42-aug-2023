@@ -6,13 +6,13 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:59:40 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/16 14:26:56 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/16 16:26:54 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (str[i] != '\0')

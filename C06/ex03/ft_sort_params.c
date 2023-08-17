@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 17:08:45 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/17 17:52:22 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/17 17:57:26 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,11 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	ft_write_args(int argc, char **argv){
+void	ft_write_args(int argc, char **argv)
+{
 	int	k;
-	k = 0;
+
+	k = 1;
 	while (k < argc)
 	{
 		write(1, argv[k], ft_strlen(argv[k]));

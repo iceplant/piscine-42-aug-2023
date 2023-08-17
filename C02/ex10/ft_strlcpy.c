@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:01:24 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/15 12:52:57 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:14:03 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	offset = 0;
 	if (size > 0)
 	{
-		while (src[offset] != '\0')
+		while (src[offset] != '\0' && offset < size)
 		{
-			if (offset == size)
-			{
-				offset--;
-				break ;
-			}
 			dest[offset] = src[offset];
 			offset++;
 		}

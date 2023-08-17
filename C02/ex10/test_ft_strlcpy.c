@@ -32,6 +32,21 @@ void test2(int size)
           );
 }
 
+void test3(int size) {
+	char s1[10]; 
+	char s2[] = "pie!";
+	int r;
+
+    r = ft_strlcpy(s1,s2,size);
+   	printf("Copied '%s' into '%s', size: %d, length %d\n",
+            s2,
+            s1,
+			size,
+            r
+          );
+	
+}
+
 
 
 int main(void) {
@@ -45,6 +60,11 @@ int main(void) {
 	test2(10);
 	test2(1);
 	test2(0);
+
+	test3(5);
+	test3(4);
+	test3(2);
+	test3(0);
 
     return(0);
 }

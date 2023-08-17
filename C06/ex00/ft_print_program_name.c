@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 16:48:48 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/17 17:57:16 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/17 22:21:22 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int	main(int argc, char **argv)
 {
 	(void)argc;
 	write(1, argv[0], ft_strlen(argv[0]));
+	write(1, '\n', 1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 21:15:29 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/17 13:14:19 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/17 13:19:09 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	ft_check_base(char *base)
 		{
 			if (base[base_len] == base[ibase])
 			{
-				printf("reached inner inner block");
 				return (-1);
 			}
 			ibase++;

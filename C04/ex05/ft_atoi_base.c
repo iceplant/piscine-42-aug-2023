@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 21:15:29 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/16 22:54:28 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/17 13:06:44 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ int	ft_check_base(char *base)
 	return (base_len);
 }
 
+/*
+// this returns sign but we need to return info about the
+// istr that has been incremented too
 int	handle_sign(char *str, int istr)
 {
 	int	sign;
@@ -72,12 +75,24 @@ int	handle_sign(char *str, int istr)
 	while (str[istr] == '-' || str[istr] == '+')
 	{
 		if (str[istr] == '-')
-		{
 			sign *= -1;
-		}
 		istr++;
 	}
-	return (sign); //this returns sign but we need to return info about the istr that has been incremented too 
+	return (sign * istr);
+} */
+
+int	parse_vals(char *str, int istr, char *base, int base_len)
+{
+	int	so_far;
+
+	so_far = 0;
+	while (ft_char_to_val(str[istr], base) != -1 && str[istr] != '\0')
+	{
+		so_far *= base_len;
+		so_far += ft_char_to_val(str[istr], base);
+		istr++;
+	}
+	return (so_far);
 }
 
 int	ft_atoi_base(char *str, char *base)
@@ -88,21 +103,21 @@ int	ft_atoi_base(char *str, char *base)
 	int	base_len;
 
 	istr = 0;
+	sign = 1;
 	while (ft_isspace(str[istr]))
 	{
 		istr++;
 	}
-	sign = handle_sign(str, istr);
+	while (str[istr] == '-' || str[istr] == '+')
+	{
+		if (str[istr] == '-')
+			sign *= -1;
+		istr++;
+	}
 	base_len = ft_check_base(base);
 	if (base_len == -1)
 		return (0);
-	so_far = 0;
-	while (ft_char_to_val(str[istr], base) != -1 && str[istr] != '\0')
-	{
-		so_far *= base_len;
-		so_far += ft_char_to_val(str[istr], base);
-		istr++;
-	}
+	so_far = parse_vals(str, istr, base, base_len);
 	so_far *= sign;
 	return (so_far);
 }

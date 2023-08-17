@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 19:07:02 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/16 19:07:29 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/17 13:15:08 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ void	ft_putnbr(int nb)
 	}
 	ft_putnbr_helper(nb);
 }
-

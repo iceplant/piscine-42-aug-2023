@@ -4,7 +4,7 @@
 
 int	main(void) 
 {
-	int i;
+	//int i;
  
 	char	*str;
 	int		n;
@@ -13,9 +13,9 @@ int	main(void)
 	str = " ---+--+1234ab567";
 	n = ft_atoi(str);
 	assert(n == -1234);
-	printf("%s prints as %d", str, n);
+	printf("%s prints as %d\n", str, n);
 	str2 = "            +++++000a09999";
 	n = ft_atoi(str2);
 	assert(n == 0);
-	printf("%s prints as %d", str2, n); 
+	printf("%s prints as %d\n", str2, n); 
 	}

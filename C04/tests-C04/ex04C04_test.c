@@ -8,7 +8,7 @@ int main(void) {
 	printf("\n999 in base '01' should be '1111100111' \n");
 	ft_putnbr_base(999, "01");
 
-	printf("Should output nothing: ");
+	printf("\nShould output nothing: \n");
 	ft_putnbr_base(10, "");
 	ft_putnbr_base(10, "0");
 	ft_putnbr_base(10, "+0");

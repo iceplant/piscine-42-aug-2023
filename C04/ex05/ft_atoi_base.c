@@ -6,11 +6,9 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 21:15:29 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/17 13:06:44 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/17 13:14:19 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_isspace(char c)
 {
@@ -63,23 +61,6 @@ int	ft_check_base(char *base)
 	}
 	return (base_len);
 }
-
-/*
-// this returns sign but we need to return info about the
-// istr that has been incremented too
-int	handle_sign(char *str, int istr)
-{
-	int	sign;
-
-	sign = 1;
-	while (str[istr] == '-' || str[istr] == '+')
-	{
-		if (str[istr] == '-')
-			sign *= -1;
-		istr++;
-	}
-	return (sign * istr);
-} */
 
 int	parse_vals(char *str, int istr, char *base, int base_len)
 {

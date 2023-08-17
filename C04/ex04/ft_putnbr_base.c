@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 20:49:15 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/16 21:09:13 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/16 21:14:33 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ void	ft_putnbr_base_helper(int nbr, char *base, int base_len)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int base_len = 0;
-	int i;
+	int	base_len;
+	int	i;
+
+	base_len = 0;
 	while (*(base + base_len) != '\0')
 	{
 		i = 0;
@@ -37,12 +39,11 @@ void	ft_putnbr_base(int nbr, char *base)
 		while (i < base_len)
 		{
 			if (base[base_len] == base[i])
-				return;
+				return ;
 			i++;
 		}
 		base_len++;
 	}
-
 	if (base_len <= 1)
 		return ;
 	if (nbr == 0)

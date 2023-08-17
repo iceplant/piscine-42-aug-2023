@@ -7,6 +7,7 @@ int	main(void)
 
 	int_min = -2147483648;
 	int_max = 2147483647;
+
 	ft_putnbr(42);
 	write(1, "\n", 1);
 	ft_putnbr(0);

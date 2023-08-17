@@ -38,7 +38,7 @@ void test4(void) {
 	char *src = "abcde";
 	char *dest = (char *) malloc(5);
 	printf("\n\n\nTest 4: \n");
-	printf("Before: \ndest: %s, src: %s, n=10\n", dest, src);
+	printf("Before: \ndest: %s, src: %s, n=2\n", dest, src);
 	ft_strncpy(dest, src, 2);
 	printf("After: \ndest: %s, src: %s", dest, src);
 }

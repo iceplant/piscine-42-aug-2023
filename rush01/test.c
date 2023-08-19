@@ -2,50 +2,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-// No hace falta con el 4x4 porque ya lo podemos poner nosotros:
-// 	- funcion que genera todas las filas posibles
-
-//	- implementacion del cuadrado (array 2D characteres)
-// 	- funcion que verifica si las filas son p0osibles con los valores de los bordes => LOL JK we do need this to check if the columns are correct
-
-//
-// funcion que:
-// 	- accepta un cuadrado
-// 	- verifica si ya esta lleno de numeros/terminado
-// 			- si si, verifica si esta correcto
-// 					si si, imprimimos el resultado
-// 					si no, return that it is not correct
-// 			- si no, hace una llamada recursiva con cada opcion posible por la fila vacia siguiente
-
-/* questions
- * Is it possible to have multiple solutions? Assume yes for now
- */
-
-/*
-char str[1];
-char *str = malloc(sizeof(char));
-*/
-
-// BOARD IMPLEMENTATION
-// - storing values
-// - storing edge values
-
-// board: 2D array[row][column]
-
-/*
-char	g_characters[4][4][4] =
-{
-    {
-        {'A', 'B'},
-        {'C', 'D'}
-    },
-    {
-        {'E', 'F'},
-        {'G', 'H'}
-    }
-};
-*/
-
 int ft_strstrlen(char **str)
 {
   int i;
@@ -57,6 +13,7 @@ int ft_strstrlen(char **str)
   return (i);
 }
 
+// make this shorter
 char **get_possible_rows_from_edges(char e1, char e2)
 {
 
@@ -93,13 +50,13 @@ char **get_possible_rows_from_edges(char e1, char e2)
     arr[2] = "3142";
     arr[3] = "3412";
   }
-  if (e1 == '2' && e1 == '3')
+  if (e1 == '2' && e2 == '3')
   {
     arr[0] = "1432";
     arr[1] = "2431";
     arr[2] = "3421";
   }
-  if (e1 == '3' && e1 == '2')
+  if (e1 == '3' && e2 == '2')
   {
     arr[0] = "2341";
     arr[1] = "1342";
@@ -228,6 +185,7 @@ int ft_solve(char board[4][4], char *edges, int rows_filled, int board_dimension
     int num_rows_for_edges = ft_strstrlen(rows);
     int i = 0;
 
+    printf("possible row: %s\n", rows[0]);
     printf("edge1: %c edge2: %c num_rows: %i\n", edge1, edge2, num_rows_for_edges);
 
     while (i < num_rows_for_edges)
@@ -250,6 +208,27 @@ int ft_solve(char board[4][4], char *edges, int rows_filled, int board_dimension
 
 void ft_init_board(char board[4][4])
 {
+  board[0][0] = '0';
+  board[0][1] = '0';
+  board[0][2] = '0';
+  board[0][3] = '0';
+
+  board[1][0] = '0';
+  board[1][1] = '0';
+  board[1][2] = '0';
+  board[1][3] = '0';
+
+  board[2][0] = '0';
+  board[2][1] = '0';
+  board[2][2] = '0';
+  board[2][3] = '0';
+
+  board[3][0] = '0';
+  board[3][1] = '0';
+  board[3][2] = '0';
+  board[3][3] = '0';
+
+  /*
   board[0][0] = '1';
   board[0][1] = '2';
   board[0][2] = '3';
@@ -269,6 +248,7 @@ void ft_init_board(char board[4][4])
   board[3][1] = '1';
   board[3][2] = '2';
   board[3][3] = '3';
+  */
 }
 
 int main(int argc, char **argv)

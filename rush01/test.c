@@ -93,8 +93,8 @@ int ft_check_if_vals_satisfy_edges(char *heights, int edge1, int edge2)
 	return ((visible_count1 == edge1) && (visible_count2 == edge2));
 }
 
-/*
-int ft_is_board_correct(char **board, board_dimension)
+
+int ft_is_board_correct(char **board, char *edges,int board_dimension)
 {
 	int row;
 	int column;
@@ -102,20 +102,22 @@ int ft_is_board_correct(char **board, board_dimension)
 	row = 0;
 	while (row < board_dimension)
 	{
-		if (!ft_check_row(board[row]))
+		if (!ft_check_if_vals_satisfy_edges(board[row], edges[8+row], edges[12+row]))
 			return 0;
 		row++;
 	}
 	column = 0;
+	/*
 	while (column < board_dimension)
 	{
 		if (!ft_check_row(ft_get_column_from_board(board, column)))
 			return (0);
 		column++;
-	}
+	}*/
 	return (1);
 }
-*/
+
+
 
 /*
 // returns 1 if a solution was found, 0 if not
@@ -197,18 +199,52 @@ int main(int argc, char **argv) {
 	ft_init_board(board);
 
 	ft_print_board(board);	
-
-	int e1 = 1;
-	int e2 = 4;
+	/*
+	int e1 = 2;
+	int e2 = 2;
 	char *row = "1234";
 	char *row2 = "4321";
-	char *row3 = "3142";
+	char *row3 = "4213";
+	char *row4 = "4231";
+    char *row5 = "4132";
+    char *row6 = "3214";
+	char *row7 = "3124";
+    char *row8 = "2143";
+    char *row9 = "2413";
+	char *row10 = "3142";
+    char *row11 = "3421";
+    char *row12 = "2431";
+	char *row13 = "1432";
+    char *row14 = "1324";
+    char *row15 = "2314";
+	char *row16 = "1243";
+    char *row17 = "1342";
+    char *row18 = "2341";
+
 	printf("Is row %s valid with edges %d and %d? %d\n", row, e1, e2, ft_check_if_vals_satisfy_edges(row, e1, e2));
 	printf("Is row %s valid with edges %d and %d? %d\n", row2, e1, e2, ft_check_if_vals_satisfy_edges(row2, e1, e2));
-	printf("Is row %s valid with edges %d and %d? %d\n", row, e1, e2, ft_check_if_vals_satisfy_edges(row, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row3, e1, e2, ft_check_if_vals_satisfy_edges(row3, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row4, e1, e2, ft_check_if_vals_satisfy_edges(row4, e1, e2));
+    printf("Is row %s valid with edges %d and %d? %d\n", row5, e1, e2, ft_check_if_vals_satisfy_edges(row5, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row6, e1, e2, ft_check_if_vals_satisfy_edges(row6, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row7, e1, e2, ft_check_if_vals_satisfy_edges(row7, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row8, e1, e2, ft_check_if_vals_satisfy_edges(row8, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row9, e1, e2, ft_check_if_vals_satisfy_edges(row9, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row10, e1, e2, ft_check_if_vals_satisfy_edges(row10, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row11, e1, e2, ft_check_if_vals_satisfy_edges(row11, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row12, e1, e2, ft_check_if_vals_satisfy_edges(row12, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row13, e1, e2, ft_check_if_vals_satisfy_edges(row13, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row14, e1, e2, ft_check_if_vals_satisfy_edges(row14, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row15, e1, e2, ft_check_if_vals_satisfy_edges(row15, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row16, e1, e2, ft_check_if_vals_satisfy_edges(row16, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row17, e1, e2, ft_check_if_vals_satisfy_edges(row17, e1, e2));
+	printf("Is row %s valid with edges %d and %d? %d\n", row18, e1, e2, ft_check_if_vals_satisfy_edges(row18, e1, e2));
+	*/
 
+	printf("%d\n",  ft_check_if_vals_satisfy_edges(board[3], 4, 1));
 
-
+	//printf("%d\n", ft_is_board_correct(board, edges, 4));
+	
 	//print row
 	
 	//ft_get_column_from_board(board);

@@ -46,21 +46,79 @@ char	g_characters[4][4][4] =
 };
 */
 
-/*
-char *ft_get_column_from_board(char **board, int column, int board_dimension)
+int ft_strstrlen(char **str)
 {
-  char *rtn[board_dimension];
   int i;
-
   i = 0;
-  while (i < board_dimension)
+  while (str[i] != NULL)
   {
-    rtn[i] = board[i][column];
     i++;
   }
-  return rtn;
+  return (i);
 }
-*/
+
+char **get_possible_rows_from_edges(char e1, char e2)
+{
+
+  char **arr = (char **)malloc(4 * sizeof(char *));
+
+  if (e1 == '1' && e2 == '2')
+  {
+    arr[0] = "4123";
+    arr[1] = "4213";
+  }
+  if (e1 == '2' && e2 == '1')
+  {
+    arr[0] = "3214";
+    arr[1] = "3124";
+  }
+  if (e1 == '1' && e2 == '3')
+  {
+    arr[0] = "4231";
+    arr[1] = "4132";
+  }
+  if (e1 == '3' && e2 == '1')
+  {
+    arr[0] = "1324";
+    arr[1] = "2314";
+  }
+  if (e1 == '1' && e2 == '4')
+    arr[0] = "4321";
+  if (e1 == '4' && e2 == '1')
+    arr[0] = "1234";
+  if (e1 == '2' && e2 == '2')
+  {
+    arr[0] = "2143";
+    arr[1] = "2413";
+    arr[2] = "3142";
+    arr[3] = "3412";
+  }
+  if (e1 == '2' && e1 == '3')
+  {
+    arr[0] = "1432";
+    arr[1] = "2431";
+    arr[2] = "3421";
+  }
+  if (e1 == '3' && e1 == '2')
+  {
+    arr[0] = "2341";
+    arr[1] = "1342";
+    arr[2] = "1243";
+  }
+  return arr;
+}
+
+void ft_print_board(char board[4][4])
+{
+  for (int i = 0; i < 4; i++)
+  {
+    for (int j = 0; j < 4; j++)
+    {
+      printf("%c ", board[i][j]);
+    }
+    printf("\n");
+  }
+}
 
 char *ft_get_row_from_board(char board[4][4], int row)
 {
@@ -148,46 +206,46 @@ int ft_is_board_correct(char board[4][4], char *edges, int board_dimension)
   return (1);
 }
 
-/*
 // returns 1 if a solution was found, 0 if not
-int ft_solve(char **board, char *edges, int rows_filled, int board_dimension)
+int ft_solve(char board[4][4], char *edges, int rows_filled, int board_dimension)
 {
+  int rtn;
   if (rows_filled == 4)
   {
-    if (ft_is_board_correct(board, board_dimension))
+    if (ft_is_board_correct(board, edges, board_dimension))
     {
-      ft_print_board(board, board_dimension);
-      return 1; //solution was found
+      ft_print_board(board);
+      return 1; // solution was found
     }
     else
-      return 0;//solution was not found
-  } else
+      return 0; // solution was not found
+  }
+  else
   {
     char edge1 = edges[8 + rows_filled];
     char edge2 = edges[12 + rows_filled];
-    int num_rows_for_edges = 1;
+    char **rows = get_possible_rows_from_edges(edge1, edge2);
+    int num_rows_for_edges = ft_strstrlen(rows);
     int i = 0;
+
+    printf("edge1: %c edge2: %c num_rows: %i\n", edge1, edge2, num_rows_for_edges);
+
     while (i < num_rows_for_edges)
     {
-      //fill board with ith possibility for rows_filled + 1 edge
-      if (ft_solve(board, rows_filled + 1, board_dimension))
-        return;
+      // fill board with ith possibility for rows_filled + 1 edge
+      int j = 0;
+      while (j < 4)
+      {
+        board[rows_filled][j] = rows[i][j];
+        j++;
+      }
+      rtn = ft_solve(board, edges, rows_filled + 1, board_dimension);
+      if (rtn)
+        return (rtn);
       i++;
     }
   }
-}
-*/
-
-void ft_print_board(char board[4][4])
-{
-  for (int i = 0; i < 4; i++)
-  {
-    for (int j = 0; j < 4; j++)
-    {
-      printf("%c ", board[i][j]);
-    }
-    printf("\n");
-  }
+  return (0);
 }
 
 void ft_init_board(char board[4][4])
@@ -221,6 +279,8 @@ int main(int argc, char **argv)
   char edges[16];
   int arg_index = 0;
   int edge_index = 0;
+  if (argc == 1)
+    return (0);
   while (argv[1][arg_index] != '\0')
   {
     if (argv[1][arg_index] != ' ')
@@ -235,7 +295,7 @@ int main(int argc, char **argv)
 
   ft_init_board(board);
 
-  ft_print_board(board);
+  // ft_print_board(board);
 
   // printf("row: %s\n", ft_get_row_from_board(board, 0));
 
@@ -243,11 +303,11 @@ int main(int argc, char **argv)
 
   // printf("result: %d\n", ft_check_if_vals_satisfy_edges(vals, '4', '1'));
 
-  printf("is board correct: %d\n", ft_is_board_correct(board, edges, 4));
+  // printf("is board correct: %d\n", ft_is_board_correct(board, edges, 4));
 
   // print row
 
   // ft_get_column_from_board(board);
 
-  // ft_solve(board
+  ft_solve(board, edges, 0, 4);
 }

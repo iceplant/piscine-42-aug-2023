@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:39:20 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 15:41:11 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 17:23:58 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	get_possible_rows_from_edges_helper(char **arr, char e1, char e2)
 		arr[1] = "2413";
 		arr[2] = "3142";
 		arr[3] = "3412";
+		arr[4] = "3241";
 	}
 	if (e1 == '2' && e2 == '3')
 	{
@@ -71,7 +72,7 @@ char	**get_possible_rows_from_edges(char e1, char e2)
 {
 	char	**arr;
 
-	arr = (char **)malloc(4 * sizeof(char *));
+	arr = (char **)malloc(5 * sizeof(char *));
 	get_possible_rows_from_edges_helper(arr, e1, e2);
 	get_possible_rows_from_edges_helper2(arr, e1, e2);
 	return (arr);

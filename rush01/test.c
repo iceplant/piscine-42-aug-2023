@@ -187,7 +187,7 @@ int ft_is_board_correct(char board[4][4], char *edges, int board_dimension)
   {
     if (!ft_check_if_vals_satisfy_edges(ft_get_column_from_board(board, column), edges[0 + column], edges[4 + column]))
     {
-      printf("reached 2");
+      printf("reached 2\n");
       return (0);
     }
     column++;
@@ -321,5 +321,6 @@ int main(int argc, char **argv)
 
   // ft_get_column_from_board(board);
 
-  ft_solve(board, edges, 0, 4);
+  if (ft_solve(board, edges, 0, 4) == 0)
+	  write(1, "Error\n", 6);
 }

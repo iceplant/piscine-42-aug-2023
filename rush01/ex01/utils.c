@@ -6,16 +6,18 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:26:26 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 18:56:03 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 19:31:39 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int	ft_strstrlen(char **str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != 0)
+	while (str[i] != NULL)
 	{
 		i++;
 	}

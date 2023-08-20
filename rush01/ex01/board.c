@@ -6,12 +6,13 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:25:06 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 13:27:29 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 14:55:26 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.c"
+//#include "utils.c"
 #include <stdio.h>
+#include <stdlib.h>
 
 char	*ft_get_row_from_board(char board[4][4], int row)
 {

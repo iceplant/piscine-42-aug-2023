@@ -6,9 +6,11 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:26:26 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 13:32:11 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 14:56:41 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int	ft_strstrlen(char **str)
 {

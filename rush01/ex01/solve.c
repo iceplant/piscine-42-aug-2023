@@ -6,11 +6,23 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:39:40 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 13:39:41 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 14:55:04 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "board.c"
+//#include "board.c"
+#include <stdlib.h>
+#include <stdio.h>
+
+int	ft_strstrlen(char **str);
+
+
+int		check_if_heights_1_through_n(char *heights, int size);
+void	ft_print_board(char board[4][4]);
+char	*ft_get_row_from_board(char board[4][4], int row);
+char	*ft_get_column_from_board(char board[4][4], int col);
+
+
 
 void	get_possible_rows_from_edges_helper(char **arr, char e1, char e2)
 {
@@ -39,13 +51,8 @@ void	get_possible_rows_from_edges_helper(char **arr, char e1, char e2)
 	}
 }
 
-// make this shorter
-// idea: for e1 > e2 call the function backwards and reverse
-char	**get_possible_rows_from_edges(char e1, char e2)
+void	get_possible_rows_from_edges_helper2(char **arr, char e1, char e2)
 {
-	char	**arr;
-
-	arr = (char **)malloc(4 * sizeof(char *));
 	if (e1 == '1' && e2 == '2')
 	{
 		arr[0] = "4123";
@@ -68,7 +75,17 @@ char	**get_possible_rows_from_edges(char e1, char e2)
 		arr[1] = "2314";
 		arr[2] = "2134";
 	}
+}
+
+// make this shorter? implement some kind of db?
+// idea: for e1 > e2 call the function backwards and reverse
+char	**get_possible_rows_from_edges(char e1, char e2)
+{
+	char	**arr;
+
+	arr = (char **) malloc(4 * sizeof(char *));
 	get_possible_rows_from_edges_helper(arr, e1, e2);
+	get_possible_rows_from_edges_helper2(arr, e1, e2);
 	return (arr);
 }
 
@@ -105,8 +122,8 @@ int	ft_check_if_vals_satisfy_edges(char *heights, char edge1, char edge2)
 		}
 		i2--;
 	}
-	return (check_if_heights_1_through_n(heights, 4) && visible_count1 == edge1
-		- '0') && (visible_count2 == edge2 - '0');
+	return ((check_if_heights_1_through_n(heights, 4) && visible_count1 == edge1
+			- '0') && (visible_count2 == edge2 - '0'));
 }
 
 int	ft_is_board_correct(char board[4][4], char *edges, int board_dimension)
@@ -131,7 +148,6 @@ int	ft_is_board_correct(char board[4][4], char *edges, int board_dimension)
 		if (!ft_check_if_vals_satisfy_edges(ft_get_column_from_board(board,
 					column), edges[0 + column], edges[4 + column]))
 		{
-			// printf("reached 2\n");
 			return (0);
 		}
 		column++;
@@ -174,7 +190,6 @@ int	ft_solve(char board[4][4], char *edges, int rows_filled,
 			num_rows_for_edges);
 		while (i < num_rows_for_edges)
 		{
-			// fill board with ith possibility for rows_filled + 1 edge
 			j = 0;
 			while (j < 4)
 			{

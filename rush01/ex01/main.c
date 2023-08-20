@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:39:27 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 16:50:26 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 16:52:01 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 void	ft_init_board_zeros(char board[4][4]);
 int		ft_solve(char board[4][4], char *edges, int rows_filled,
 			int board_dimension);
-
 
 int	main(int argc, char **argv)
 {

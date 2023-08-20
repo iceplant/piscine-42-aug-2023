@@ -16,7 +16,6 @@
 */
 #include <unistd.h>
 
-
 void	ft_init_board_zeros(char board[4][4]);
 int		ft_solve(char board[4][4], char *edges, int rows_filled,
 			int board_dimension);

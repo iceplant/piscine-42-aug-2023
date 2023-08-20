@@ -6,12 +6,12 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:25:06 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 17:10:53 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 17:15:51 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 char	*ft_get_row_from_board(char board[4][4], int row)
 {
@@ -45,9 +45,9 @@ char	*ft_get_column_from_board(char board[4][4], int col)
 
 void	ft_print_board(char board[4][4])
 {
-	int	i;
-	int	j;
-	char to_print;
+	int		i;
+	int		j;
+	char	to_print;
 
 	i = 0;
 	while (i < 4)
@@ -61,7 +61,7 @@ void	ft_print_board(char board[4][4])
 				write(1, " ", 1);
 			j++;
 		}
-		write(1, "\n", 1);	
+		write(1, "\n", 1);
 		i++;
 	}
 }

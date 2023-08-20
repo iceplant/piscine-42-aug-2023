@@ -6,11 +6,10 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 16:09:59 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 17:13:54 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 18:43:44 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int		ft_strstrlen(char **str);
@@ -81,7 +80,6 @@ int	ft_is_board_correct(char board[4][4], char *edges, int board_dimension)
 		if (!ft_check_if_vals_satisfy_edges(ft_get_row_from_board(board, row),
 				edges[8 + row], edges[12 + row]))
 		{
-			printf("row: %d\n", row);
 			return (0);
 		}
 		row++;

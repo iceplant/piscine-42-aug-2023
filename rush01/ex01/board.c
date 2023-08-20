@@ -6,11 +6,13 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:25:06 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 17:15:51 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 18:51:01 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// needed for malloc
 #include <stdlib.h>
+//needed for write
 #include <unistd.h>
 
 char	*ft_get_row_from_board(char board[4][4], int row)

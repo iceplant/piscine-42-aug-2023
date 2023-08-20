@@ -6,10 +6,11 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:39:20 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 18:33:10 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 18:53:33 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// needed for malloc
 #include <stdlib.h>
 
 void	get_possible_rows_from_edges_helper(char **arr, char e1, char e2)
@@ -69,11 +70,12 @@ void	get_possible_rows_from_edges_helper2(char **arr, char e1, char e2)
 
 // make this shorter? implement some kind of db?
 // idea: for e1 > e2 call the function backwards and reverse
+// sizeof(char *) = 8
 char	**get_possible_rows_from_edges(char e1, char e2)
 {
 	char	**arr;
 
-	arr = (char **)malloc(5 * sizeof(char *));
+	arr = (char **)malloc(5 * 8);
 	get_possible_rows_from_edges_helper(arr, e1, e2);
 	get_possible_rows_from_edges_helper2(arr, e1, e2);
 	return (arr);

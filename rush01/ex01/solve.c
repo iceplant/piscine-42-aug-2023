@@ -6,12 +6,11 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:39:40 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 17:18:47 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 18:54:43 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
-#include <stdlib.h>
 
 int		ft_strstrlen(char **str);
 int		check_if_heights_1_through_n(char *heights, int size);

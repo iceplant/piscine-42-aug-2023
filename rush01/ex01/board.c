@@ -6,12 +6,11 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:25:06 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 14:55:26 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 17:10:53 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "utils.c"
-#include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 
 char	*ft_get_row_from_board(char board[4][4], int row)
@@ -48,6 +47,7 @@ void	ft_print_board(char board[4][4])
 {
 	int	i;
 	int	j;
+	char to_print;
 
 	i = 0;
 	while (i < 4)
@@ -55,10 +55,13 @@ void	ft_print_board(char board[4][4])
 		j = 0;
 		while (j < 4)
 		{
-			printf("%c ", board[i][j]);
+			to_print = board[i][j];
+			write(1, &to_print, 1);
+			if (j != 3)
+				write(1, " ", 1);
 			j++;
 		}
-		printf("\n");
+		write(1, "\n", 1);	
 		i++;
 	}
 }

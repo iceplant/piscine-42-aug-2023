@@ -6,11 +6,10 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:39:40 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/20 16:45:09 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/20 17:11:22 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "board.c"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -30,6 +29,7 @@ int		ft_check_if_vals_satisfy_edges_right_to_left(char *heights, char edge1,
 int		ft_check_if_vals_satisfy_edges(char *heights, char edge1, char edge2);
 
 char	**get_possible_rows_from_edges(char e1, char e2);
+
 
 void	ft_print_debugger(char board[4][4], char *edges, char **rows,
 		int rows_filled)
@@ -55,7 +55,7 @@ int	ft_handle_rows_filled(char board[4][4], char *edges, int board_dimension)
 		return (1);
 	}
 	return (0);
-}
+} 
 
 // edge1 = edges[8 + rows_filled];
 // edge2 = edges[12 + rows_filled];
@@ -73,7 +73,7 @@ int	ft_solve(char board[4][4], char *edges, int rows_filled,
 		return (ft_handle_rows_filled(board, edges, board_dimension));
 	rows = get_possible_rows_from_edges(edges[8 + rows_filled], 
 			edges[12 + rows_filled]);
-	ft_print_debugger(board, edges, rows, rows_filled);
+	//ft_print_debugger(board, edges, rows, rows_filled);
 	i = 0;
 	while (i < ft_strstrlen(rows))
 	{

@@ -101,6 +101,37 @@ char *ft_get_column_from_board(char board[4][4], int col)
   return rtn;
 }
 
+int check_if_heights_1_through_n(char *heights, int size)
+{
+	int values_seen_so_far[10];
+	//set all array elements to 0
+	int i = 0;
+	while (i < 10)
+	{
+		values_seen_so_far	[i] = 0;
+		i++;
+	}
+	//iterate through height and set corresponding indeces in arr to 1 to show we have seen that element
+	i = 0;
+	while (i < size)
+	{
+	    //printf("height %c, height as an int %d\n", heights[i], heights[i] - '0');
+		values_seen_so_far[heights[i] - '0'] = 1;
+		i++;
+	}
+	//itterate through arr again, and see if we're missinng any values:
+	//		remember: array has indices 0-9 but we only want 1-4
+	//		return 0 (false) if we are missing values, return 1 (true) if not
+	i = 1;
+	while (i <= size)
+	{
+		if (values_seen_so_far[i] != 1)
+			return 0;
+		i++;
+	}
+	return 1;
+}
+
 int ft_check_if_vals_satisfy_edges(char *heights, char edge1, char edge2)
 {
   char max_height_so_far1 = '0';
@@ -128,7 +159,8 @@ int ft_check_if_vals_satisfy_edges(char *heights, char edge1, char edge2)
     }
     i2--;
   }
-  return ((visible_count1 == edge1 - '0') && (visible_count2 == edge2 - '0'));
+
+  return (check_if_heights_1_through_n(heights, 4) && visible_count1 == edge1 - '0') && (visible_count2 == edge2 - '0');
 }
 
 int ft_is_board_correct(char board[4][4], char *edges, int board_dimension)

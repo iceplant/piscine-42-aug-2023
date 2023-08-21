@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 21:15:29 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/21 15:51:56 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/21 16:02:48 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,27 +40,27 @@ int	ft_char_to_val(char c, char *base)
 
 int	ft_check_base(char *base)
 {
-	int	base_len;
+	int	base_index;
 	int	ibase;
 
-	base_len = 0;
-	while (*(base + base_len) != '\0')
+	base_index = 0;
+	while (*(base + base_index) != '\0')
 	{
 		ibase = 0;
-		if ((base[base_len] == '+' || base[base_len] == '-')
-			|| base[base_len] == ' ')
+		if ((base[base_index] == '+' || base[base_index] == '-')
+			|| base[base_index] <= ' ' || base[base_index] >= 127)
 			return (-1);
-		while (ibase < base_len - 1)
+		while (ibase < base_index - 1)
 		{
-			if (base[base_len] == base[ibase])
+			if (base[base_index] == base[ibase])
 			{
 				return (-1);
 			}
 			ibase++;
 		}
-		base_len++;
+		base_index++;
 	}
-	return (base_len);
+	return (base_index);
 }
 
 long	parse_vals(char *str, int istr, char *base, int base_len)
@@ -97,9 +97,9 @@ int	ft_atoi_base(char *str, char *base)
 		istr++;
 	}
 	base_len = ft_check_base(base);
-	if (base_len == -1)
+	if (base_len <= 1)
 		return (0);
 	so_far = parse_vals(str, istr, base, base_len);
-	so_far *= (long) sign;
+	so_far *= (long)sign;
 	return (so_far);
 }

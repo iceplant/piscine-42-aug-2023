@@ -43,4 +43,6 @@ int main(void) {
 	assert(ft_atoi_base(int_max_str, "") == 0);
 	assert(ft_atoi_base(s2, "?") == 0);
 	assert(ft_atoi_base(s2, invalid_base) == 0);
+
+	assert(ft_atoi_base("aaa", "a") == 0);
 }

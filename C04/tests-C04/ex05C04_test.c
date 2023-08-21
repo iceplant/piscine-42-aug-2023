@@ -6,6 +6,7 @@ int main(void) {
 	char c = 'f';
 	char *base1 = "0123456789";
 	char *base2 ="0123456789abcdef";  
+	char *invalid_base = " + asbc-";
 	
 	char *s1 ="   +++-+-+-12345"; 
 	char *s2 ="   ---+-+-1d2e3aj45";
@@ -38,5 +39,8 @@ int main(void) {
 	int d_max = ft_atoi_base(int_max_str, base1);
 	printf("string %s with base %s atois to %d\n",int_max_str, base1, d_max);		
 	assert(ft_atoi_base(int_max_str, base1) == int_max);
-	
+
+	assert(ft_atoi_base(int_max_str, "") == 0);
+	assert(ft_atoi_base(s2, "?") == 0);
+	assert(ft_atoi_base(s2, invalid_base) == 0);
 }

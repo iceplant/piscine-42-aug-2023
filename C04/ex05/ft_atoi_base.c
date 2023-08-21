@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 21:15:29 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/21 15:44:58 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/21 15:51:56 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,6 @@ int	ft_atoi_base(char *str, char *base)
 	if (base_len == -1)
 		return (0);
 	so_far = parse_vals(str, istr, base, base_len);
-	so_far *= (long)sign;
-	return ((int)so_far);
+	so_far *= (long) sign;
+	return (so_far);
 }

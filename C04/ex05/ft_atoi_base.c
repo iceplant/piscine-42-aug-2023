@@ -6,9 +6,11 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 21:15:29 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/17 13:19:09 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/21 15:44:58 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int	ft_isspace(char c)
 {
@@ -61,15 +63,15 @@ int	ft_check_base(char *base)
 	return (base_len);
 }
 
-int	parse_vals(char *str, int istr, char *base, int base_len)
+long	parse_vals(char *str, int istr, char *base, int base_len)
 {
-	int	so_far;
+	long	so_far;
 
 	so_far = 0;
 	while (ft_char_to_val(str[istr], base) != -1 && str[istr] != '\0')
 	{
-		so_far *= base_len;
-		so_far += ft_char_to_val(str[istr], base);
+		so_far *= (long)base_len;
+		so_far += (long)ft_char_to_val(str[istr], base);
 		istr++;
 	}
 	return (so_far);
@@ -77,10 +79,10 @@ int	parse_vals(char *str, int istr, char *base, int base_len)
 
 int	ft_atoi_base(char *str, char *base)
 {
-	int	istr;
-	int	sign;
-	int	so_far;
-	int	base_len;
+	int		istr;
+	int		sign;
+	long	so_far;
+	int		base_len;
 
 	istr = 0;
 	sign = 1;
@@ -98,6 +100,6 @@ int	ft_atoi_base(char *str, char *base)
 	if (base_len == -1)
 		return (0);
 	so_far = parse_vals(str, istr, base, base_len);
-	so_far *= sign;
-	return (so_far);
+	so_far *= (long)sign;
+	return ((int)so_far);
 }

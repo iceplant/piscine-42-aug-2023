@@ -11,13 +11,20 @@
 /* ************************************************************************** */
 
 // how do we handle negatives?
-int ft_is_prime(int nb) {
-	if (nb < 0) return ft_is_prime(-1 * nb);
-	if (nb == 0 || nb == 1) return 0;
-	int i = 2;
-	while (i*i <= nb) {
-		if (nb % i == 0) return 0;
+int	ft_is_prime(int nb)
+{
+	int	i;
+
+	if (nb < 0)
+		return (ft_is_prime(-1 * nb));
+	if (nb == 0 || nb == 1)
+		return (0);
+	i = 2;
+	while (i * i <= nb)
+	{
+		if (nb % i == 0)
+			return (0);
 		i++;
 	}
-	return 1;
+	return (1);
 }

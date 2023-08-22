@@ -14,20 +14,22 @@
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	offset;
+	unsigned int	rtn;
 
 	offset = 0;
 	if (size > 0)
 	{
-		while (src[offset] != '\0' && offset < size)
+		while (src[offset] != '\0' && offset < size - 1)
 		{
 			dest[offset] = src[offset];
 			offset++;
 		}
 	}
 	dest[offset] = '\0';
+	rtn = offset;
 	while (src[offset] != '\0')
 	{
 		offset++;
 	}
-	return (offset);
+	return (rtn);
 }

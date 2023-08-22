@@ -28,8 +28,8 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	unsigned int	slen;
 	unsigned int	i;
 
-	dlen = ft_strlen(src);
-	slen = ft_strlen(dest);
+	dlen = ft_strlen(dest);
+	slen = ft_strlen(src);
 	if (size <= dlen || size == 0)
 		return (slen + size);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 21:17:13 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/17 21:22:52 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/22 19:12:07 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@ int	ft_is_prime(int nb)
 {
 	int	i;
 
-	if (nb < 0)
-		return (ft_is_prime(-1 * nb));
-	if (nb == 0 || nb == 1)
+	if (nb < 2)
 		return (0);
 	i = 2;
 	while (i * i <= nb)

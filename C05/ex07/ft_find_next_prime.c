@@ -6,18 +6,15 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 21:24:27 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/17 21:30:20 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/22 19:21:15 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// how do we handle negatives?
 int	ft_is_prime(int nb)
 {
 	int	i;
 
-	if (nb < 0)
-		return (ft_is_prime(-1 * nb));
-	if (nb == 0 || nb == 1)
+	if (nb < 2)
 		return (0);
 	i = 2;
 	while (i * i <= nb)
@@ -31,9 +28,13 @@ int	ft_is_prime(int nb)
 
 int	ft_find_next_prime(int nb)
 {
-	while (!ft_is_prime(nb))
+	if (nb < 2)
+		return (2);
+	while (!ft_is_prime(nb) && nb <= 2147483629)
 	{
 		nb++;
 	}
-	return (nb);
+	if (ft_is_prime(nb))
+		return (nb);
+	return (0);
 }

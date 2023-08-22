@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:36:00 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/21 11:49:41 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/22 11:54:53 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ char	*ft_strdup(char *src)
 {
 	int		l;
 	char	*rtn;
-	int		i;
 
 	l = ft_strlen(src);
 	rtn = malloc(l + 1);

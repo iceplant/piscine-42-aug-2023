@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:50:19 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/22 12:11:30 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/22 12:14:36 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	*arr;
 
+	*range = malloc(sizeof(int *));
 	if (min >= max)
 	{
+		*range = NULL;
 		return (0);
 	}
-	*range = malloc(sizeof(int *));
 	arr = ft_range(min, max);
 	if (arr == NULL)
 		return (-1);

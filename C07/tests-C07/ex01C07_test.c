@@ -12,4 +12,7 @@ int main(void)
 
 	int *test_range2 = ft_range(-100,-89);
 	ft_print_arr(test_range2, 11);
+
+	int *test_range3 = ft_range(10,0);
+	assert(test_range3 == NULL);
 }

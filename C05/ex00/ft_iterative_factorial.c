@@ -13,9 +13,6 @@
 // "argument is not valid" => does this mean handle type errors?????
 int	ft_iterative_factorial(int nb)
 {
-	int	total;
-
-	total = 1;
 	if (nb < 0)
 		return (0);
 	if (nb == 0 || nb == 1)

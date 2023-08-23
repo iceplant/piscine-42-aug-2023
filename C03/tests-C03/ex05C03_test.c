@@ -6,8 +6,9 @@
 int main(void) {
 	char *s1 = "qwertyqwerty";
 	char *s2 = "abcde";
+	char s3[0];
 
 	char *buf = (char*)malloc(sizeof(char)*2000);
 	strlcat(buf, s2, 20);
-	printf("%s", buf);
+	printf("%s\n", buf);
 }

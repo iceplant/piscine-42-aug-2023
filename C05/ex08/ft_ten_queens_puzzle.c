@@ -71,28 +71,54 @@ void zero_board(int board[10][10])
   }
 }
 
-int ft_is_valid_diagonals(int board[10][10])
+void board_config_1(int board[10][10])
 {
-  int i;
+  int i = 0;
   int j;
-  int sum;
   while (i < 10)
   {
     j = 0;
-    sum = 0;
-    while (i + j < 10)
+    while (j < 10)
     {
-      sum += board[i][i + j];
+      if (i == j)
+        board[i][j] = 1;
       j++;
     }
-    if (sum > 1)
-      return 0;
-    sum = 0;
+    i++;
+  }
+}
+
+int ft_is_valid_diagonals(int board[10][10])
+{
+  // printf("reached diagonals\n");
+  int i;
+  int j;
+  int sum1;
+  int sum2;
+  i = 0;
+  while (i < 10)
+  {
+    j = 0;
+    sum1 = 0;
+    sum2 = 0;
     while (i + j < 10)
     {
-      sum += board[i + j][i];
+      // printf("i: %d, j: %d\n", i, j);
+      sum1 += board[j][i + j];
+      sum2 += board[i + j][j];
+      j++;
     }
-    if (sum > 1)
+    if (sum1 > 1 || sum2 > 1)
+      return 0;
+    sum1 = 0;
+    sum2 = 0;
+    while (i + j < 10)
+    {
+      // printf("i: %d, j: %d\n", i, j);
+      sum1 += board[10 - i - j][j];
+      sum2 += board[10 - j][j + i];
+    }
+    if (sum1 > 1 || sum2 > 1)
       return (0);
     i++;
   }
@@ -146,7 +172,7 @@ int ft_is_valid(int board[10][10])
   // alternative approach: sum diagonal/row/col and see if it adds to more than 1
   // x+y = 0 through 18 =>
 
-  return (1) && ft_is_valid_diagonals(board);
+  return (ft_is_valid_diagonals(board));
 }
 
 // void ft_set_attack_field(int board[10][10], int x, int y) {
@@ -198,8 +224,8 @@ int ft_ten_queens_puzzle(void)
   return (ft_ten_queens_puzzle_helper(board, 0));
 }
 
-int main(void)
-{
-  ft_ten_queens_puzzle();
-  return (0);
-}
+// int main(void)
+// {
+//   ft_ten_queens_puzzle();
+//   return (0);
+// }

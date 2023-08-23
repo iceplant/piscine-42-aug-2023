@@ -6,11 +6,10 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 15:01:40 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/21 17:37:40 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/22 19:34:02 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 const static int	g_int_min = -2147483648;

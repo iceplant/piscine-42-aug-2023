@@ -1,4 +1,5 @@
-#include <stdio.h>
+// #include <stdio.h>
+#include <unistd.h>
 
 int is_new_char_valid(char *sol, int position)
 {
@@ -16,6 +17,19 @@ int is_new_char_valid(char *sol, int position)
   return 1;
 }
 
+void ft_print_sol(char *sol)
+{
+  int i;
+
+  i = 0;
+  while (i < 10)
+  {
+    write(1, &sol[i], 1);
+    i++;
+  }
+  write(1, "\n", 1);
+}
+
 // position = where we will try adding a new value
 int ft_ten_queens_puzzle_helper(char sol[10], int position)
 {
@@ -24,7 +38,8 @@ int ft_ten_queens_puzzle_helper(char sol[10], int position)
 
   if (position == 10)
   {
-    printf("%s\n", sol);
+    // printf("%s\n", sol);
+    ft_print_sol(sol);
     return 1;
   }
   while (i < 10)
@@ -49,5 +64,6 @@ int ft_ten_queens_puzzle(void)
     i++;
   }
   int rtn = ft_ten_queens_puzzle_helper(sol, 0);
-  printf("%d\n", rtn);
+  // printf("%d\n", rtn);
+  return (rtn);
 }

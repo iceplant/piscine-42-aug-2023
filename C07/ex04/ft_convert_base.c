@@ -86,7 +86,6 @@ void	ft_rev_char_tab(char *tab, int size)
 char	*ft_nbr_to_base(int nbr, char *base)
 {
 	int		base_len;
-	int		i;
 	char	*rtn;
 	int		l;
 

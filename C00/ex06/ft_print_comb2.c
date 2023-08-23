@@ -40,7 +40,7 @@ void	ft_print_comb2_inner(char a, char b, char c, char d)
 			d = '0';
 			c = c + 1;
 		}
-		if (b != '9')
+		if (b < '9')
 		{
 			b = b + 1;
 		}
@@ -49,8 +49,8 @@ void	ft_print_comb2_inner(char a, char b, char c, char d)
 			b = '0';
 			a = a + 1;
 		}
-		c = a;
-		d = b + 1;
+		c = (10*(a - '0') + (b - '0') + 1) / 10 + '0';
+		d = (10*(a - '0') + (b - '0') + 1) % 10 + '0';
 	}
 }
 

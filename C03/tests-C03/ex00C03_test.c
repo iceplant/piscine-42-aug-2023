@@ -8,7 +8,7 @@ int main(void) {
 	char b[] = "abd";
 	char c[] = "abe";
 	char d[] = "abcde";
-
+	
 	printf("Comparing %s and %s %d\n", a, b, ft_strcmp(a,b));
 	assert(strcmp(a,b) == ft_strcmp(a,b));
 	printf("Comparing %s and %s %d\n", a, c, ft_strcmp(a,b));
@@ -19,5 +19,7 @@ int main(void) {
 	assert(strcmp(d,a) == ft_strcmp(d,a));
 	printf("Comparing %s and %s %d\n", a, a, ft_strcmp(d,a));	
 	assert(strcmp(a,a) == ft_strcmp(a,a));
+
+	// TRY WITH NULL STRINGS/EMPTY STRINGS! THIS DOESN"T WORK BUT MOULINETTE SAID IT WAS OK ANYWAY!!!
 }
 

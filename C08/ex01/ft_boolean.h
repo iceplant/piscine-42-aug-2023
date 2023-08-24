@@ -6,9 +6,11 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:12:28 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/23 17:23:47 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/24 12:50:05 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FT_BOOLEAN_H
 
 #include <unistd.h>
 
@@ -20,3 +22,5 @@
 #define SUCCESS 1
 
 typedef int t_bool;
+
+#endif

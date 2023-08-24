@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 12:56:12 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/24 18:51:27 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/24 18:52:48 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,24 +54,6 @@ int	ft_get_word_len(char *str, char *charset)
 	return (i);
 }
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	iter;
-
-	iter = 0;
-	if (dest == NULL)
-	{
-		return (NULL);
-	}
-	while (src[iter] != '\0')
-	{
-		*(dest + iter) = *(src + iter);
-		iter++;
-	}
-	*(dest + iter) = '\0';
-	return (dest);
-}
-
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	iter;
@@ -110,8 +92,8 @@ char	**ft_split(char *str, char *charset)
 		if (!ft_is_separator(str[istr], charset) && (istr == 0
 				|| ft_is_separator(str[istr - 1], charset)))
 		{
-			rtn[irtn] = malloc(sizeof(char *) * ft_get_word_len(str + istr,
-					charset));
+			rtn[irtn] = malloc(sizeof(char *) * 
+					ft_get_word_len(str + istr, charset));
 			ft_strncpy(rtn[irtn], str + istr, (unsigned)ft_get_word_len(str
 					+ istr, charset));
 			irtn++;

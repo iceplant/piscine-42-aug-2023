@@ -6,12 +6,12 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 13:23:28 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/24 13:26:48 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/24 15:14:24 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
-#include <stdio.h>
+//#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_strlen(char *str)

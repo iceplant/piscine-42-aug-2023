@@ -2,17 +2,17 @@
 
 int main(int argc, char **argv)
 {
-  int index;
+  int i;
   struct s_stock_str *structs;
 
   structs = ft_strs_to_tab(argc, argv);
-  index = 0;
-  while (index < argc)
+  i = 0;
+  while (i <= argc)
   {
-    printf("%d\n", index);
-    printf("\t| original : $%s$ @ %p\n", structs[index].str, structs[index].str);
-    printf("\t|   copied : $%s$ @ %p\n", structs[index].copy, structs[index].copy);
-    printf("\t|     size : %d\n", structs[index].size);
-    index++;
+    printf("%d\n", i);
+    printf("original : %s addess:  %p\n", structs[i].str, structs[i].str);
+    printf("copy: %s address:  %p\n", structs[i].copy, structs[i].copy);
+    printf("size : %d\n", structs[i].size);
+    i++;
   }
 }

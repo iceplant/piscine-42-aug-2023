@@ -1,4 +1,5 @@
 #include "ft_strs_to_tab.c"
+#include <stdio.h>
 
 int main(int argc, char **argv)
 {

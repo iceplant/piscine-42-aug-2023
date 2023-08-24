@@ -1,4 +1,4 @@
-//#include "ft_show_tab.c"
+#include "ft_show_tab.c"
 #include "ft_strs_to_tab.c"
 
 

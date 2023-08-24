@@ -11,7 +11,7 @@ int main(int argc, char **argv)
   {
     printf("%d\n", i);
     printf("original : %s addess:  %p\n", structs[i].str, structs[i].str);
-    printf("copy: %s address:  %p\n", structs[i].copy, structs[i].copy);
+	printf("copy: %s address:  %p\n", structs[i].copy, structs[i].copy);
     printf("size : %d\n", structs[i].size);
     i++;
   }

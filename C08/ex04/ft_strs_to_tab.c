@@ -1,13 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/24 13:23:28 by rokamen-          #+#    #+#             */
+/*   Updated: 2023/08/24 13:23:30 by rokamen-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_stock_str.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct s_stock_str
-{
-	int				size;
-	char			*str;
-	char			*copy;
-}					t_stock_str;
 
 int	ft_strlen(char *str)
 {
@@ -58,15 +63,11 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		return (NULL);
 	while (i < ac)
 	{
-		// rtn[i] = (struct s_stock_str)malloc(sizeof(t_stock_str));
-		// if (rtn[i] == NULL)
-		// return (NULL);
 		rtn[i].size = ft_strlen(av[i]);
 		rtn[i].str = av[i];
 		rtn[i].copy = ft_strdup(av[i]);
 		i++;
 	}
-	// my_struct = malloc(sizeof(t_stock_str));
 	rtn[i].size = 0;
 	rtn[i].str = 0;
 	rtn[i].copy = 0;

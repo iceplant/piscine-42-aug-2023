@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:55:34 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/26 17:20:24 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/26 17:48:34 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <string.h>
 
 int ft_is_this_line_a_match(char *number, char *line)
 {
@@ -190,18 +191,33 @@ void  ft_put_words_from_value(char *str, char* dict_str)
 				//printf("to find: %s\n", to_find);
 				
 				ft_find_and_put_value_from_dict(to_find, dict_str);
-				if (str[i + 1] != '0')
+				if (str[i] != '0' && str[i + 1] != '0')
 					write(1, "-", 1);
 			}
 		}
 								
-		/*if (digit == 3)
+		if (digit == 3)
+		{
 			// look up str[i]
 			// add word for "hundred" that is in the dictionary
 			// add " and " if either of the next values are not zero
+			to_find = ft_strndup(str + i, 1);
+			ft_find_and_put_value_from_dict(to_find, dict_str);
+			write(1, " hundred", 8);
+			if (str[i + 1] != '0' || str[i + 2] != '0')
+				write(1, " and ", 5);
+	   	}
 		if (digit == 4)
+		{
 			// look up str[i]
 			// add word for "thousand" that is in the dictionary
+			to_find = ft_strndup(str + i, 1);
+			ft_find_and_put_value_from_dict(to_find, dict_str);
+			write(1, " ", 1);
+			ft_find_and_put_value_from_dict("1000", dict_str);
+			write(1, " ", 1);
+		}
+/*
 		if (digit == 5)
 			// same as 2
 		if (digit == 6)
@@ -223,6 +239,16 @@ void  ft_put_words_from_value(char *str, char* dict_str)
 
 }
 
+char *to_str(int i)
+{
+	char d1 = (i / 10) + '0';
+	char d2 = (i % 10) + '0';
+	char *rtn = malloc(sizeof(char) * 3);
+	rtn[0] = d1;
+	rtn[1] = d2;
+	
+	return rtn;
+}
 
 // Driver code
 int main()
@@ -252,8 +278,15 @@ int main()
 	int output = ft_is_this_line_a_match(number, test_line);
 	printf("result: %d\n", output); */
 
-
-	ft_put_words_from_value("24", dict_str);
+	int i = 1100;
+	char *number_str[4];
+	while (i < 1130)
+	{
+		sprintf(number_str, "%d", i);
+		ft_put_words_from_value(number_str, dict_str);
+		printf("\n");
+		i++;
+	}
 
     
 	close(fd);

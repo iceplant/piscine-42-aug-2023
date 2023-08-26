@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:55:34 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/26 18:04:38 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/26 18:31:02 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,28 +164,24 @@ void  ft_put_words_from_value(char *str, char* dict_str)
 	}
 	//printf("digits: %d\n", digit);
 	
+	//handle zero as special case
+
 	while(str[i] >= '0' && str[i] <= '9')
 	{
 		//digits are indexing from 1!
-		if (digit % 3 == 1)
+		if (digit % 3 == 1 && str[i] != '0')
 		{
-			//printf("hit digit == 1\n");
-			// look up str[i]
-			
 			to_find = ft_strndup(str + i, 1);
-			//printf("to_find: %s\n", to_find);
 			ft_find_and_put_value_from_dict(to_find, dict_str);
 		}
-		if (digit % 3 == 2)
+		if (digit % 3 == 2 && str[i] != '0')
 		{
 			if (str[i] == '1' || str[i + 1] == '0')
 			{
 				to_find = ft_strndup(str + i, 2);
-				//printf("to find: %s\n", to_find);
 				ft_find_and_put_value_from_dict(to_find, dict_str);
-				return ;
-				//miramos adelante para los unideles
-				//hacemos una incrementacion extra
+				i += 1;
+				digit--;
 			} else { 
 				to_find = ft_strndup_with_zeros(str + i, 1, 1);
 				//printf("to find: %s\n", to_find);
@@ -196,7 +192,7 @@ void  ft_put_words_from_value(char *str, char* dict_str)
 			}
 		}
 								
-		if (digit % 3 == 0)
+		if (digit % 3 == 0 && str[i] != '0')
 		{
 			// look up str[i]
 			// add word for "hundred" that is in the dictionary
@@ -207,34 +203,22 @@ void  ft_put_words_from_value(char *str, char* dict_str)
 			if (str[i + 1] != '0' || str[i + 2] != '0')
 				write(1, " and ", 5);
 	   	}
-		if (digit == 4 || digit == 5 || digit == 6)
+		if (digit == 4 )
 		{ 	write(1, " ", 1); 
 			ft_find_and_put_value_from_dict("1000", dict_str);
 			write(1, " ", 1);
 		}
-		if (digit == 7 || digit == 8 || digit == 9)
+		if (digit == 7)
 		{ 	write(1, " ", 1); 
 			ft_find_and_put_value_from_dict("1000000", dict_str);
 			write(1, " ", 1);
 		}
-
-/*
-		if (digit == 5)
-			// same as 2
-
-		if (digit == 6)
-			// same as 3
-		if (digit == 7)
-			// look up str[i]
-			// look up 10^6 = 1 million
-		if (digit == 8)
-			// same as 2
-		if (digit == 9)
-			// same as 3
 		if (digit == 10)
-			// look up str[i]
-			// look up 10^9 = 1 billion
-		*/
+		{
+			write(1, " ", 1);
+			ft_find_and_put_value_from_dict("1000000000", dict_str);
+			write(1, " ", 1);
+		}
 		i++;
 		digit--;
 	}
@@ -280,9 +264,9 @@ int main()
 	int output = ft_is_this_line_a_match(number, test_line);
 	printf("result: %d\n", output); */
 
-	int i = 440000;
-	char *number_str[7];
-	while (i < 440001)
+	int i = 362451254;
+	char *number_str[5];
+	while (i <= 362451256 )
 	{
 		sprintf(number_str, "%d", i);
 		ft_put_words_from_value(number_str, dict_str);

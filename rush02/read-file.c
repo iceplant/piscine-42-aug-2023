@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:55:34 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/26 17:48:34 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/26 18:04:38 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,7 @@ void  ft_put_words_from_value(char *str, char* dict_str)
 	while(str[i] >= '0' && str[i] <= '9')
 	{
 		//digits are indexing from 1!
-		if (digit == 1)
+		if (digit % 3 == 1)
 		{
 			//printf("hit digit == 1\n");
 			// look up str[i]
@@ -176,7 +176,7 @@ void  ft_put_words_from_value(char *str, char* dict_str)
 			//printf("to_find: %s\n", to_find);
 			ft_find_and_put_value_from_dict(to_find, dict_str);
 		}
-		if (digit == 2)
+		if (digit % 3 == 2)
 		{
 			if (str[i] == '1' || str[i + 1] == '0')
 			{
@@ -196,7 +196,7 @@ void  ft_put_words_from_value(char *str, char* dict_str)
 			}
 		}
 								
-		if (digit == 3)
+		if (digit % 3 == 0)
 		{
 			// look up str[i]
 			// add word for "hundred" that is in the dictionary
@@ -207,19 +207,21 @@ void  ft_put_words_from_value(char *str, char* dict_str)
 			if (str[i + 1] != '0' || str[i + 2] != '0')
 				write(1, " and ", 5);
 	   	}
-		if (digit == 4)
-		{
-			// look up str[i]
-			// add word for "thousand" that is in the dictionary
-			to_find = ft_strndup(str + i, 1);
-			ft_find_and_put_value_from_dict(to_find, dict_str);
-			write(1, " ", 1);
+		if (digit == 4 || digit == 5 || digit == 6)
+		{ 	write(1, " ", 1); 
 			ft_find_and_put_value_from_dict("1000", dict_str);
 			write(1, " ", 1);
 		}
+		if (digit == 7 || digit == 8 || digit == 9)
+		{ 	write(1, " ", 1); 
+			ft_find_and_put_value_from_dict("1000000", dict_str);
+			write(1, " ", 1);
+		}
+
 /*
 		if (digit == 5)
 			// same as 2
+
 		if (digit == 6)
 			// same as 3
 		if (digit == 7)
@@ -278,9 +280,9 @@ int main()
 	int output = ft_is_this_line_a_match(number, test_line);
 	printf("result: %d\n", output); */
 
-	int i = 1100;
-	char *number_str[4];
-	while (i < 1130)
+	int i = 440000;
+	char *number_str[7];
+	while (i < 440001)
 	{
 		sprintf(number_str, "%d", i);
 		ft_put_words_from_value(number_str, dict_str);

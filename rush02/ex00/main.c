@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:16:08 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 16:54:03 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 17:44:49 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,10 +126,17 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	if (!ft_is_dict_str_formatted_correctly(dict_str))
+	{
 		write(1, "Dict Error\n", 11);
+		return (0);
+	}
 	num_str = format_number(num_str);
 	if (!num_str || ft_strcmp("4294967295", num_str) < 0)
+	{
 		write(1, "Error\n", 6);
+		return (0);
+	}
 	ft_put_words_from_value(num_str, dict_str);
 	write(1, "\n", 1);
+	return (0);
 }

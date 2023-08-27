@@ -6,11 +6,11 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:16:08 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 14:18:38 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 16:22:22 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_atoi.c"
+//#include "ft_atoi.c"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -124,7 +124,6 @@ int	main(int argc, char **argv)
 	char	*num_str;
 	char	*dict_str;
 
-	// char *dict;
 	if (argc == 2)
 	{
 		num_str = argv[1];

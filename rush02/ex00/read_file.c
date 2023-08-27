@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:55:34 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 16:10:42 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 16:21:35 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		ft_strlen(char *str);
 void	ft_strncpy(char *dest, char *src, int n);
 char	*ft_strndup(char *src, int n);
 char	*ft_strndup_with_zeros(char *src, int n, int num_zeros);
+int		ft_find_and_put_value_from_dict(char *nb, char *dict_str);
 
 void	ft_pwfv_handle_digits_1_and_2(char *str,
 		char *dict_str, int i, int digit)
@@ -155,24 +156,6 @@ char	*to_str(int i)
   rtn[1] = d2;
   return (rtn);
 } */
-char	*ft_get_dict_str_from_file(char *filename)
-{
-	char	*dict_str;
-	int		fd;
-	int		sz;
-
-	dict_str = (char *)malloc(1000 * sizeof(char));
-	fd = open(filename, O_RDONLY);
-	if (0 == fd)
-	{
-		printf("file can't be opened \n");
-		return (NULL);
-	}
-	sz = read(fd, dict_str, 100000);
-	dict_str[sz] = '\0';
-	close(fd);
-	return (dict_str);
-}
 
 /*
 int	main(void)

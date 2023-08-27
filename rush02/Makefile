@@ -1,5 +1,5 @@
 NAME = rush-02
-SOURCES = main.c read-file.c
+SOURCES = main.c read-file.c utils.c
 OBJECTS = ${SOURCES:.c=.o}
 FLAGS = -Wall -Wextra -Werror
 all: ${NAME}

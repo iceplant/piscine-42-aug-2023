@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:16:08 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 17:44:49 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 17:59:45 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,7 @@
 char	*ft_get_dict_str_from_file(char *filename);
 void	ft_put_words_from_value(char *str, char *dict_str);
 int		ft_is_digit(char c);
-
-int	ft_is_printable(char c)
-{
-	return (c >= 32 && c <= 126);
-}
+int		ft_is_printable(char c);
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -57,9 +53,9 @@ int	ft_is_dict_str_formatted_correctly(char *dict_str)
 	i = 0;
 	while (dict_str[i])
 	{
-		if (!ft_is_digit(dict_str[i]))
+		if (!(dict_str[i] >= '0' && dict_str[i] <= '9'))
 			return (0);
-		while (ft_is_digit(dict_str[i]))
+		while (dict_str[i] >= '0' && dict_str[i] <= '9')
 			i++;
 		while (dict_str[i] == ' ')
 			i++;
@@ -105,6 +101,22 @@ char	*format_number(char *str)
 	return (rtn);
 }
 
+int	ft_check_input_valid(char *num_str, char *dict_str)
+{
+	if (!ft_is_dict_str_formatted_correctly(dict_str))
+	{
+		write(1, "Dict Error\n", 11);
+		return (0);
+	}
+	num_str = format_number(num_str);
+	if (!num_str || ft_strcmp("4294967295", num_str) < 0)
+	{
+		write(1, "Error\n", 6);
+		return (0);
+	}
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	char	*num_str;
@@ -125,18 +137,10 @@ int	main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (0);
 	}
-	if (!ft_is_dict_str_formatted_correctly(dict_str))
+	if (ft_check_input_valid(num_str, dict_str))
 	{
-		write(1, "Dict Error\n", 11);
-		return (0);
+		ft_put_words_from_value(num_str, dict_str);
+		write(1, "\n", 1);
 	}
-	num_str = format_number(num_str);
-	if (!num_str || ft_strcmp("4294967295", num_str) < 0)
-	{
-		write(1, "Error\n", 6);
-		return (0);
-	}
-	ft_put_words_from_value(num_str, dict_str);
-	write(1, "\n", 1);
 	return (0);
 }

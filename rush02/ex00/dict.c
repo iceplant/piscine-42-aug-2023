@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 16:06:29 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 16:46:48 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 19:47:11 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int	ft_find_and_put_value_from_dict(char *nb, char *dict_str)
 		}
 		i++;
 	}
+	write(1, "Dict Error\n", 1);
 	return (0);
 }
 

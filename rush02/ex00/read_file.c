@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:55:34 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 16:21:35 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 16:50:37 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+//#include <string.h>
 #include <unistd.h>
 
 int		ft_strlen(char *str);
@@ -67,11 +67,8 @@ void	ft_pwfv_handle_digits_3(char *str, char *dict_str, int i, int digit)
 	}
 }
 
-void	ft_pwfv_handle_digits_4_and_above(char *str,
-		char *dict_str, int i, int digit)
+void	ft_pwfv_handle_digits_4_and_above(char *dict_str, int digit)
 {
-	char	*to_find;
-
 	if (digit == 4)
 	{
 		write(1, " ", 1);
@@ -101,7 +98,7 @@ void	ft_put_words_from_value_helper(char *str,
 	{
 		ft_pwfv_handle_digits_1_and_2(str, dict_str, i, digit);
 		ft_pwfv_handle_digits_3(str, dict_str, i, digit);
-		ft_pwfv_handle_digits_4_and_above(str, dict_str, i, digit);
+		ft_pwfv_handle_digits_4_and_above(dict_str, digit);
 		i++;
 		digit--;
 	}

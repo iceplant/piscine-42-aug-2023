@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 15:03:54 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 15:12:11 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 16:48:14 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,9 @@ char	*ft_strndup_with_zeros(char *src, int n, int num_zeros)
 	}
 	rtn[n + i] = '\0';
 	return (rtn);
+}
+
+int	ft_is_digit(char c)
+{
+	return (c >= '0' && c <= '9');
 }

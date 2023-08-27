@@ -6,12 +6,16 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 16:06:29 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 16:21:25 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 16:46:48 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // we need write here to output the contents of the dictionary
 #include <unistd.h>
+// for malloc
+#include <stdlib.h>
+// for open + other file commands
+#include <fcntl.h>
 
 int	ft_is_this_line_a_match(char *number, char *line)
 {
@@ -83,7 +87,7 @@ char	*ft_get_dict_str_from_file(char *filename)
 	fd = open(filename, O_RDONLY);
 	if (0 == fd)
 	{
-		printf("file can't be opened \n");
+		write(1, "Error\n", 6);
 		return (NULL);
 	}
 	sz = read(fd, dict_str, 100000);

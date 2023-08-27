@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:16:08 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 16:22:22 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 16:42:53 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@
 
 char	*ft_get_dict_str_from_file(char *filename);
 void	ft_put_words_from_value(char *str, char *dict_str);
-
-int	ft_is_digit(char c)
-{
-	return (c >= '0' && c <= '9');
-}
+int		ft_is_digit(char c);
 
 int	ft_is_printable(char c)
 {
@@ -64,30 +60,20 @@ int	ft_is_dict_str_formatted_correctly(char *dict_str)
 		if (!ft_is_digit(dict_str[i]))
 			return (0);
 		while (ft_is_digit(dict_str[i]))
-		{
 			i++;
-		}
 		while (dict_str[i] == ' ')
-		{
 			i++;
-		}
 		if (dict_str[i] != ':')
 			return (0);
 		i++;
 		while (dict_str[i] == ' ')
-		{
 			i++;
-		}
 		if (!ft_is_printable(dict_str[i]))
 			return (0);
 		while (ft_is_printable(dict_str[i]))
-		{
 			i++;
-		}
 		while (dict_str[i] == '\n')
-		{
 			i++;
-		}
 	}
 	return (1);
 }

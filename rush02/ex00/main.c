@@ -6,12 +6,12 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:16:08 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 18:14:59 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 18:35:26 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "ft_atoi.c"
-//#include <stdio.h>
+#include <stdio.h>
 #include <unistd.h>
 
 //#include "read-file.c"
@@ -103,7 +103,7 @@ char	*format_number(char *str)
 	return (rtn);
 }
 
-int	ft_check_input_valid(char *num_str, char *dict_str)
+char	*ft_check_input_valid(char *num_str, char *dict_str)
 {
 	if (!ft_is_dict_str_formatted_correctly(dict_str))
 	{
@@ -114,9 +114,9 @@ int	ft_check_input_valid(char *num_str, char *dict_str)
 	if (!num_str || ft_strcmp("4294967295", num_str) < 0)
 	{
 		write(1, "Error\n", 6);
-		return (0);
+		return (NULL);
 	}
-	return (1);
+	return (num_str);
 }
 
 int	main(int argc, char **argv)
@@ -139,7 +139,8 @@ int	main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (0);
 	}
-	if (ft_check_input_valid(num_str, dict_str))
+	num_str = ft_check_input_valid(num_str, dict_str);
+	if (num_str)
 	{
 		ft_put_words_from_value(num_str, dict_str);
 		write(1, "\n", 1);

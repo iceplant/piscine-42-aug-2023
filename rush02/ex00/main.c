@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:16:08 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 17:59:45 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 18:14:59 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ char	*format_number(char *str)
 		i++;
 	}
 	str[i] = '\0';
+	if (neg_count % 2 == 1)
+		return (NULL);
 	return (rtn);
 }
 

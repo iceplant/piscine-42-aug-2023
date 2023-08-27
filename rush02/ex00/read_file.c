@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:55:34 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 16:50:37 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 17:38:15 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,21 @@ char	*ft_strndup(char *src, int n);
 char	*ft_strndup_with_zeros(char *src, int n, int num_zeros);
 int		ft_find_and_put_value_from_dict(char *nb, char *dict_str);
 
-void	ft_pwfv_handle_digits_1_and_2(char *str,
+int	ft_pwfv_handle_digits_2(char *str,
 		char *dict_str, int i, int digit)
 {
 	char	*to_find;
+	int		rtn;
 
-	if (digit % 3 == 1 && str[i] != '0')
-	{
-		to_find = ft_strndup(str + i, 1);
-		ft_find_and_put_value_from_dict(to_find, dict_str);
-	}
+	to_find = NULL;
+	rtn = 0;
 	if (digit % 3 == 2 && str[i] != '0')
 	{
 		if (str[i] == '1' || str[i + 1] == '0')
 		{
 			to_find = ft_strndup(str + i, 2);
 			ft_find_and_put_value_from_dict(to_find, dict_str);
-			i += 1;
-			digit--;
+			rtn = 1;
 		}
 		else
 		{
@@ -51,12 +48,20 @@ void	ft_pwfv_handle_digits_1_and_2(char *str,
 				write(1, "-", 1);
 		}
 	}
+	free(to_find);
+	return (rtn);
 }
 
-void	ft_pwfv_handle_digits_3(char *str, char *dict_str, int i, int digit)
+void	ft_pwfv_handle_digits_1_3(char *str, char *dict_str, int i, int digit)
 {
 	char	*to_find;
 
+	to_find = NULL;
+	if (digit % 3 == 1 && str[i] != '0')
+	{
+		to_find = ft_strndup(str + i, 1);
+		ft_find_and_put_value_from_dict(to_find, dict_str);
+	}
 	if (digit % 3 == 0 && str[i] != '0')
 	{
 		to_find = ft_strndup(str + i, 1);
@@ -65,6 +70,7 @@ void	ft_pwfv_handle_digits_3(char *str, char *dict_str, int i, int digit)
 		if (str[i + 1] != '0' || str[i + 2] != '0')
 			write(1, " and ", 5);
 	}
+	free(to_find);
 }
 
 void	ft_pwfv_handle_digits_4_and_above(char *dict_str, int digit)
@@ -96,8 +102,12 @@ void	ft_put_words_from_value_helper(char *str,
 		return ;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		ft_pwfv_handle_digits_1_and_2(str, dict_str, i, digit);
-		ft_pwfv_handle_digits_3(str, dict_str, i, digit);
+		ft_pwfv_handle_digits_1_3(str, dict_str, i, digit);
+		if (ft_pwfv_handle_digits_2(str, dict_str, i, digit))
+		{
+			i++;
+			digit--;
+		}
 		ft_pwfv_handle_digits_4_and_above(dict_str, digit);
 		i++;
 		digit--;

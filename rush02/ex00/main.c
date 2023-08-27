@@ -6,12 +6,12 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:16:08 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 16:42:53 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 16:54:03 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "ft_atoi.c"
-#include <stdio.h>
+//#include <stdio.h>
 #include <unistd.h>
 
 //#include "read-file.c"

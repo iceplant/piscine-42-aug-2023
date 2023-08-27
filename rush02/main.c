@@ -6,14 +6,19 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 13:16:08 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/27 14:13:00 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/27 14:18:38 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "ft_atoi.c"
 #include <unistd.h>
-#include "read-file.c"
+//#include "read-file.c"
+
+
+char *ft_get_dict_str_from_file(char *filename);
+void ft_put_words_from_value(char *str, char *dict_str);
+
 
 
 int ft_is_digit(char c)
@@ -113,7 +118,7 @@ char *format_number(char *str)
 int main(int argc, char **argv)
 {
   char *num_str;
-  char *dict;
+  //char *dict;
   char *dict_str;
   if (argc == 2)
   {
@@ -124,7 +129,6 @@ int main(int argc, char **argv)
   {
     num_str = argv[1];
     dict_str = argv[2];
-    // TODO: check if dict is correctly formatted
   }
   else
   {
@@ -141,6 +145,6 @@ int main(int argc, char **argv)
 
 
 
-	//ft_put_words_from_value(num_str, dict_str);
-	//write(1, "\n", 1);
+	ft_put_words_from_value(num_str, dict_str);
+	write(1, "\n", 1);
 }

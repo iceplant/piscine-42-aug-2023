@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 12:56:12 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/28 15:51:42 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/28 16:21:39 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
+//sizeof(char *) = 8
 char	**ft_split(char *str, char *charset)
 {
 	int		istr;
@@ -93,11 +94,10 @@ char	**ft_split(char *str, char *charset)
 		if (!ft_is_separator(str[istr], charset) && (istr == 0
 				|| ft_is_separator(str[istr - 1], charset)))
 		{
-			rtn[irtn] = malloc(sizeof(char *) * 
-					(ft_get_word_len(str + istr, charset) + 1));
+			rtn[irtn] = malloc(8 * (ft_get_word_len(str + istr, charset) + 1));
 			if (!rtn[irtn])
 				return (NULL);
-			ft_strncpy(rtn[irtn], str + istr, (unsigned) ft_get_word_len(str
+			ft_strncpy(rtn[irtn], str + istr, (unsigned)ft_get_word_len(str
 					+ istr, charset));
 			irtn++;
 		}

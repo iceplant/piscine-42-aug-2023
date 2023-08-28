@@ -3,6 +3,7 @@
 #include <assert.h>
 
 int main(void) {
+	
 	assert(ft_is_prime(0) == 0);
 	assert(ft_is_prime(1) == 0);
 	assert(ft_is_prime(2) == 1);
@@ -15,6 +16,10 @@ int main(void) {
 	assert(ft_is_prime(-42) == 0);
 	assert(ft_is_prime(-7919) == 0);	
 	assert(ft_is_prime(2147483629) == 1); 
-	assert(ft_is_prime(2147483647) == 0);
+	assert(ft_is_prime(2147483647) == 1);
 	assert(ft_is_prime(-2147483648) == 0);
+	assert(ft_is_prime(2147483645) == 0);
+	
+
+	ft_is_prime(2147483647);
 }

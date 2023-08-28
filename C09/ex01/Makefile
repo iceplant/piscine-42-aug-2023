@@ -6,7 +6,7 @@
 #    By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/27 18:48:33 by rokamen-          #+#    #+#              #
-#    Updated: 2023/08/28 15:12:54 by rokamen-         ###   ########.fr        #
+#    Updated: 2023/08/28 17:59:14 by rokamen-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ${NAME}: ${OBJECTS}
 all: ${NAME}
 
 %.o: %.c ${DEPS}
-	cc ${FLAGS} -c $< -o $@
+	cc ${FLAGS} -c $< -o $@ -I ${INC_DIR}
 
 clean:
 	rm -f ${OBJECTS}

@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 12:56:12 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/24 18:52:48 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:36:38 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	**ft_split(char *str, char *charset)
 	irtn = 0;
 	rtn = malloc(sizeof(char *) * ft_strlen(str));
 	if (rtn == NULL)
-		printf("%s\n", str);
+		return (NULL);
 	while (str[istr])
 	{
 		if (!ft_is_separator(str[istr], charset) && (istr == 0

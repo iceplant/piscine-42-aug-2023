@@ -5,7 +5,7 @@
 
 int main(void) {
 
-	/*	
+		
 
 	printf("\n10 in base 'abc' should be 'bab': \n");
 	ft_putnbr_base(10, "abc");
@@ -36,7 +36,7 @@ int main(void) {
 	printf("\n");
 	ft_putnbr_base(g_int_min, "0123456789abcdef");
 	printf("\n");
-	ft_putnbr_base(-56789, "0123456789"); */
+	ft_putnbr_base(-56789, "0123456789"); 
 
 	ft_putnbr_base(g_int_min, "0123456789");
 	

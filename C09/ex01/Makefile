@@ -6,7 +6,7 @@
 #    By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/27 18:48:33 by rokamen-          #+#    #+#              #
-#    Updated: 2023/08/27 19:52:11 by rokamen-         ###   ########.fr        #
+#    Updated: 2023/08/28 15:12:54 by rokamen-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,12 @@ INC_DIR = includes
 
 DEPS = $(INC_DIR)/ft.h
 
-all: ${NAME}
-
 ${NAME}: ${OBJECTS}
 	# cc -c ${FLAGS} -o ${NAME} ${OBJECTS}
-	ar rcs libft.a ${OBJECTS}
+	ar rc libft.a ${OBJECTS}
+	ranlib ${NAME}
+
+all: ${NAME}
 
 %.o: %.c ${DEPS}
 	cc ${FLAGS} -c $< -o $@
@@ -33,7 +34,7 @@ clean:
 fclean: clean
 	rm -f ${NAME}
 
-.PHONY: all clean fclean
+#.PHONY: all clean fclean
 
 re: fclean all
 

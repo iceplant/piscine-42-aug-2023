@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 12:56:12 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/28 11:36:38 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/28 15:51:42 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		*(dest + iter) = '\0';
 		iter++;
 	}
+	dest[iter] = '\0';
 	return (dest);
 }
 
@@ -84,7 +85,7 @@ char	**ft_split(char *str, char *charset)
 
 	istr = 0;
 	irtn = 0;
-	rtn = malloc(sizeof(char *) * ft_strlen(str));
+	rtn = malloc(sizeof(char *) * (ft_strlen(str) + 1));
 	if (rtn == NULL)
 		return (NULL);
 	while (str[istr])
@@ -93,12 +94,15 @@ char	**ft_split(char *str, char *charset)
 				|| ft_is_separator(str[istr - 1], charset)))
 		{
 			rtn[irtn] = malloc(sizeof(char *) * 
-					ft_get_word_len(str + istr, charset));
-			ft_strncpy(rtn[irtn], str + istr, (unsigned)ft_get_word_len(str
+					(ft_get_word_len(str + istr, charset) + 1));
+			if (!rtn[irtn])
+				return (NULL);
+			ft_strncpy(rtn[irtn], str + istr, (unsigned) ft_get_word_len(str
 					+ istr, charset));
 			irtn++;
 		}
 		istr++;
 	}
+	rtn[irtn] = 0;
 	return (rtn);
 }

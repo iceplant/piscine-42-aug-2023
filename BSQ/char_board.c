@@ -6,16 +6,17 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 18:43:17 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/29 18:59:10 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/29 19:40:22 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//should we check if #cols given is legit?
 int get_char_board_line_length(char *char_board)
 {
     int i;
 
 	i = 5;
-   while (char_board[i] != '\n')
+   while (charchar_board[i] != '\n')
 		i++;
 	return (i - 4);
   }
@@ -35,6 +36,6 @@ void set_char_board_val(char *char_board, int row, int col, char val)
 	char_board[position] = val;
 }
 
-
-
+char obstacle(char *char_board)
+	return (char_board[2]);
 

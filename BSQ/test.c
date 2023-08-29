@@ -3,25 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
-char *ft_get_dict_str_from_file(char *filename)
-{
-  char *dict_str;
-  int fd;
-  int sz;
-
-  dict_str = (char *)malloc(1000 * sizeof(char));
-  fd = open(filename, O_RDONLY);
-  if (0 == fd)
-  {
-    printf("file can't be opened \n");
-    return (NULL);
-  }
-  sz = read(fd, dict_str, 100000);
-  dict_str[sz] = '\0';
-  close(fd);
-  return (dict_str);
-}
+#include "file.c"
 
 int ft_get_board_line_lenth(char *board)
 {
@@ -111,8 +93,7 @@ void ft_backtrack(char *board)
   }
 }
 
-// int ft_get_x_dim();
-// int ft_get_y_dim();
+
 
 int main(void)
 {

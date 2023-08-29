@@ -6,12 +6,13 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 17:26:36 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/29 20:12:53 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/29 20:30:29 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //TODO: cursed includes - plz delete
 #include <stdio.h>
+void print_int_board(int *int_board);
 
 // file.c
 char *ft_get_dict_str_from_file(char *filename);
@@ -30,6 +31,7 @@ void set_int_board_val(int *int_board, int row, int col, int val);
 void set_numbers(char *char_board, int *int_board);
 
 
+
 int main(void)
 {
 	
@@ -43,9 +45,9 @@ int main(void)
   printf("%d\n", get_int_board_val(int_board, 5, 5));
 
 
-	set_numbers(rtn, int_board);
+  set_numbers(rtn, int_board);
 
-
+	print_int_board(int_board);
   
   /*
   int num_lines = rtn[0] - '0';

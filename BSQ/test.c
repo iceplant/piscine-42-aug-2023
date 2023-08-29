@@ -115,6 +115,17 @@ void fill_square(char *board)
 	}
 }
 
+void clear_numbers(char *board)
+{
+	board += 5;
+	while (*board)
+	{
+		if (*board != 'o' && *board != 'X' && *board != '\n')
+			*board = '.';
+		board++;
+	}
+}
+
 
 
 int main(void)
@@ -133,6 +144,10 @@ int main(void)
   printf("%s\n", rtn);
 
 fill_square(rtn);
+
+printf("%s\n", rtn);
+
+clear_numbers(rtn);
 
 printf("%s\n", rtn);
 

@@ -15,15 +15,6 @@ int ft_get_board_line_lenth(char *board)
   return (i - 4);
 }
 
-// // index
-// char ft_get_board_val(char *board, int row, int col)
-// {
-// }
-
-// char ft_set_board_val(char *board, int row, int col, char val)
-// {
-// }
-
 char ft_choose_new_value(char *board, char up, char left, char upleft)
 {
   char obstacle = board[2];
@@ -93,6 +84,37 @@ void ft_backtrack(char *board)
   }
 }
 
+void fill_square(char *board)
+{
+	int i = 5;
+	int so_far = 0;
+	int i_so_far;
+	int line_length = ft_get_board_line_lenth(board);
+	while (board[i])
+	{
+		if (board[i] >= '0' && board[i] <= '9' && board[i] - '0' > so_far)
+		{
+			so_far = board[i] - '0';
+			i_so_far = i;
+		}
+		i++;
+	}
+	printf("so far: %d, i: %d", so_far, i_so_far);
+	i = 0;
+   	int j;	
+	
+	while (i < so_far)
+	{
+	   j = 0;
+		while (j < so_far)
+		{
+			board[i_so_far - j - (i * line_length)] = 'X';
+			j++;
+		}
+		i++;
+	}
+}
+
 
 
 int main(void)
@@ -109,6 +131,11 @@ int main(void)
   ft_backtrack(rtn);
 
   printf("%s\n", rtn);
+
+fill_square(rtn);
+
+printf("%s\n", rtn);
+
 
   return (0);
 }

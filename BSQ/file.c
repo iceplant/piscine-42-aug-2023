@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 17:24:58 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/30 16:07:12 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/30 16:14:20 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,34 @@ char	*ft_get_dict_str_from_file(char *filename)
 
 char	*error(void)
 {
-	write (1, "map error\n", 5);
+	write(1, "map error\n", 5);
 	return (NULL);
+}
+
+int	get_size(char *filename)
+{
+	int		fd;
+	int		size;
+	char	*buffer;
+
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+		return (0);
+	size = 1;
+	buffer = (char *)malloc(size * sizeof(char));
+	if (!buffer)
+		return (0);
+	while (read(fd, buffer, size) != 0)
+	{
+		free(buffer);
+		size += size;
+		buffer = (char *)malloc(size * sizeof(char));
+		if (!buffer)
+			return (0);
+	}
+	close(fd);
+	free(buffer);
+	return (size);
 }
 
 char	*get_file_data(char *filename)
@@ -50,27 +76,11 @@ char	*get_file_data(char *filename)
 	int		size;
 	char	*buffer;
 
+	size = get_size(filename);
+	buffer = (char *)malloc(size * sizeof(char));
+	if (!buffer)
+		return (error());
 	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-		return (error());
-	size = 1;
-	buffer = (char *) malloc(size * sizeof(char));
-	if (!buffer)
-		return (error());
-	while (read(fd, buffer, size) != 0)
-	{
-		free(buffer);
-		size += size;
-		buffer = (char *) malloc(size * sizeof(char));
-		if (!buffer)
-			return (error());
-	}
-	close(fd);
-	free(buffer);
-	buffer = (char *) malloc(size * sizeof(char));
-	if (!buffer)
-		return (error());
-	fd = open (filename, O_RDONLY);
 	read(fd, buffer, size);
 	return (buffer);
 }

@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 17:26:36 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/29 20:30:29 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/30 13:14:49 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,36 @@ void set_int_board_val(int *int_board, int row, int col, int val);
 
 // algorithm.c
 void set_numbers(char *char_board, int *int_board);
+void fill_square(char *char_board, int *int_board);
 
 
 
 int main(void)
 {
-	
-  char *rtn = ft_get_dict_str_from_file("internet_example_file");
+	char *rtn = ft_get_dict_str_from_file("internet_example_file");
   printf("%d\n", get_char_board_line_length(rtn));
+  printf("%d\n", get_char_board_line_length(rtn));
+printf("%d\n", get_char_board_line_length(rtn));
+printf("%d\n", get_char_board_line_length(rtn));
+
   set_char_board_val(rtn, 5, 5, 'X');
   printf("%c\n", get_char_board_val(rtn, 5, 5));
 
-  int *int_board = make_int_board(28, 28);
+  
+  int *int_board = make_int_board(9, get_char_board_line_length(rtn) - 1);
   set_int_board_val(int_board, 5, 5, 42);
   printf("%d\n", get_int_board_val(int_board, 5, 5));
 
 
+  printf("%c\n", rtn[0]);
   set_numbers(rtn, int_board);
 
 	print_int_board(int_board);
+
+	fill_square(rtn, int_board);
+
+	printf("%s\n", rtn);
+	
   
   /*
   int num_lines = rtn[0] - '0';

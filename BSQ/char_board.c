@@ -6,19 +6,30 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 18:43:17 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/29 20:21:38 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:56:54 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//should we check if #cols given is legit?
+#include <stdio.h>
+
+// This includes terminating newlline
+// + 1 at end because we have an index and we want a length
 int get_char_board_line_length(char *char_board)
 {
     int i;
+	int first_line_length;
 
-	i = 5;
-   while (char_board[i] != '\n')
+	i = 0;
+	while(char_board[i] != '\n' && char_board[i] != '\0')
+	{
 		i++;
-	return (i - 4);
+	}
+	first_line_length = i + 1;
+	i++;
+
+   while (char_board[i] != '\n' && char_board[i] != '\0')
+		i++;
+	return (i - first_line_length + 1);
   }
 
 // these are slow - can we call line-length once at the beginning and never again?

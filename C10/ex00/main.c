@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 14:39:50 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/30 21:38:55 by rokamen-         ###   ########.fr       */
+/*   Created: 2023/08/30 21:48:01 by rokamen-          #+#    #+#             */
+/*   Updated: 2023/08/30 21:51:52 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_sort(int *tab, int length, int (*f)(int, int))
+int main(int argc, char **argv)
 {
-	int	i;
-
-	i = 0;
-	while (i < length - 1)
+	if (argc == 1)
 	{
-		if (f(tab[i], tab[i + 1]) > 0)
-			return (0);
-		i++;
-	}
-	return (1);
+
 }

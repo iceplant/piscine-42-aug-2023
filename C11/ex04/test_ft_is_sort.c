@@ -15,9 +15,13 @@ int main(void)
 {
 	int test[] = {1, 2, 3, 4, 5};
 	int test2[] = {5, 43, 31, 6, 100};	
+	int test3[] = {1, 2, 3, 2};
+
+	
 	printf("%d\n", ft_is_sort(test, 5, f));
 	printf("%d\n", ft_is_sort(test2, 5, f));
 
 	assert(ft_is_sort(test, 5, f) == 1);
-	assert(ft_is_sort(test2, 5, f) == 0);
+	assert(ft_is_sort(test2, 5, f) == 0); 
+	assert(ft_is_sort(test3, 4, f) == 0);
 }

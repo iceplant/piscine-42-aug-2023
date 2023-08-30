@@ -17,7 +17,7 @@
 int		get_char_board_line_length(char *char_board);
 char	get_char_board_val(char *char_board, int row, int col);
 void	set_char_board_val(char *char_board, int row, int col, char val);
-char 	obstacle(char *char_board);
+char	obstacle(char *char_board);
 char	full(char *char_board);
 char	get_char_board_num_rows(char *char_board);
 
@@ -106,7 +106,7 @@ void	fill_square_helper(char *char_board, int row_so_far, int col_so_far,
 	}
 }
 
-//possible speedup: change the way we're getting number of lines in first while
+// possible speedup: change the way we're getting number of lines in first while
 void	fill_square(char *char_board, int *int_board)
 {
 	int	row;

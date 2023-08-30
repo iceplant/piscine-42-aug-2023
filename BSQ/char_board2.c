@@ -51,11 +51,11 @@ char	get_char_board_num_rows(char *char_board)
 
 void	put_char_board(char *char_board)
 {
-	int	num_rows;
-	int	num_columns;
-	int	row;
-	int	col;
-	char to_write;
+	int		num_rows;
+	int		num_columns;
+	int		row;
+	int		col;
+	char	to_write;
 
 	row = 0;
 	col = 0;
@@ -67,7 +67,7 @@ void	put_char_board(char *char_board)
 		while (col < num_columns - 1)
 		{
 			to_write = get_char_board_val(char_board, row, col);
-			write(1, &to_write,  1);
+			write(1, &to_write, 1);
 			col++;
 		}
 		write(1, "\n", 1);

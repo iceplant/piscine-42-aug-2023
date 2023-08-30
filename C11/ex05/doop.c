@@ -6,11 +6,10 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 18:23:36 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/30 19:07:08 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/30 19:57:38 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
 int		ft_atoi(char *str);

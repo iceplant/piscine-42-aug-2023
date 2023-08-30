@@ -1,5 +1,6 @@
 #include "ft_is_sort.c"
 #include <stdio.h>
+#include <assert.h>
 
 int f (int a, int b)
 {
@@ -16,4 +17,7 @@ int main(void)
 	int test2[] = {5, 43, 31, 6, 100};	
 	printf("%d\n", ft_is_sort(test, 5, f));
 	printf("%d\n", ft_is_sort(test2, 5, f));
+
+	assert(ft_is_sort(test, 5, f) == 1);
+	assert(ft_is_sort(test2, 5, f) == 0);
 }

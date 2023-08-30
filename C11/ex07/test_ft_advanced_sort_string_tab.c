@@ -41,6 +41,8 @@ int main(void)
 {
 	char *test[] = {"a", "bec", "abc", "zyx", "ay", NULL};
 
+	char *test2[] = {};
+
 	print_str_arr(test);
 
 	ft_str_swap(test, test + 1);

@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 14:32:03 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/29 14:39:04 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/30 19:52:00 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_count_if(char **tab, int length, int (*f)(char*))
 	count = 0;
 	while (i < length)
 	{
-		if (tab[i])
+		if (f(tab[i]))
 			count++;
 		i++;
 	}

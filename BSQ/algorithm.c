@@ -6,12 +6,12 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 19:13:08 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/30 13:49:58 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/30 15:45:36 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // forbidden!!!!
-#include <stdio.h>
+//#include <stdio.h>
 
 // char_baord.c
 int		get_char_board_line_length(char *char_board);
@@ -99,7 +99,6 @@ void	fill_square_helper(char *char_board, int row_so_far, int col_so_far,
 		col = col_so_far;
 		while (col > col_so_far - so_far)
 		{
-			printf("row: %d col %d\n", row, col);
 			set_char_board_val(char_board, row, col, full(char_board));
 			col--;
 		}
@@ -107,7 +106,7 @@ void	fill_square_helper(char *char_board, int row_so_far, int col_so_far,
 	}
 }
 
-// TODO: change the way we're getting number of lines in first while
+//possible speedup: change the way we're getting number of lines in first while
 void	fill_square(char *char_board, int *int_board)
 {
 	int	row;

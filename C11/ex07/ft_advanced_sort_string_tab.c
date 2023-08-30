@@ -19,7 +19,7 @@ void	ft_str_swap(char **a, char **b)
 	*b = temp;
 }
 
-void ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
+void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int	i;
 	int	has_swapped;
@@ -38,5 +38,5 @@ void ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
 			}
 			i++;
 		}
-	}	
+	}
 }

@@ -43,10 +43,10 @@ void	ft_str_swap(char **a, char **b)
 	*b = temp;
 }
 
-void ft_sort_string_tab(char **tab)
+void	ft_sort_string_tab(char **tab)
 {
 	int	i;
-	int has_swapped;
+	int	has_swapped;
 
 	has_swapped = 1;
 	while (has_swapped)

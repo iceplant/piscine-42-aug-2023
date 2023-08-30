@@ -6,11 +6,23 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 18:43:17 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/30 13:20:38 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/30 13:51:29 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+int	get_char_board_info_line_length(char *char_board)
+{
+	int	i;
+
+	i = 0;
+	while (char_board[i] != '\n' && char_board[i] != '\0')
+	{
+		i++;
+	}
+	return (i + 1);
+}
 
 // This includes terminating newlline
 // + 1 at end because we have an index and we want a length
@@ -51,9 +63,4 @@ void	set_char_board_val(char *char_board, int row, int col, char val)
 	line_length = get_char_board_line_length(char_board);
 	position = 5 + (row * line_length) + col;
 	char_board[position] = val;
-}
-
-char	obstacle(char *char_board)
-{
-	return (char_board[2]);
 }

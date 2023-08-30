@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 19:13:08 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/30 13:27:56 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/30 13:49:58 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 int		get_char_board_line_length(char *char_board);
 char	get_char_board_val(char *char_board, int row, int col);
 void	set_char_board_val(char *char_board, int row, int col, char val);
+char 	obstacle(char *char_board);
+char	full(char *char_board);
+char	get_char_board_num_rows(char *char_board);
 
 // int_board.c
 int		*make_int_board(int num_rows, int num_columns);
 int		get_int_board_val(int *int_board, int row, int col);
 void	set_int_board_val(int *int_board, int row, int col, int val);
-char	obstacle(char *char_board);
 
 int	smallest(int a, int b, int c)
 {
@@ -70,7 +72,7 @@ void	set_numbers(char *char_board, int *int_board)
 	int	row;
 	int	col;
 
-	num_lines = char_board[0] - '0';
+	num_lines = get_char_board_num_rows(char_board);
 	line_length = get_char_board_line_length(char_board);
 	row = 0;
 	while (row < num_lines)
@@ -98,7 +100,7 @@ void	fill_square_helper(char *char_board, int row_so_far, int col_so_far,
 		while (col > col_so_far - so_far)
 		{
 			printf("row: %d col %d\n", row, col);
-			set_char_board_val(char_board, row, col, 'X');
+			set_char_board_val(char_board, row, col, full(char_board));
 			col--;
 		}
 		row--;
@@ -116,7 +118,7 @@ void	fill_square(char *char_board, int *int_board)
 
 	row = 0;
 	so_far = 0;
-	while (row < char_board[0] - '0')
+	while (row < get_char_board_num_rows(char_board))
 	{
 		col = 0;
 		while (col < get_char_board_line_length(char_board) - 1)

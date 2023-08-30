@@ -11,19 +11,20 @@
 # **************************************************************************** #
 
 NAME	= do-op
-SRCS	= doop.c ft_atoi.c ft_putnbr.c
+SRCS	= src/do_op.c src/ft_atoi.c src/ft_putnbr.c  src/functions.c src/helpers.c
 CFLAGS	= -Wall -Wextra -Werror
 CC		= gcc
 OBJS	= ${SRCS:.c=.o}
 RM		= rm -rf
+HEADERS = ./includes/
 
 all		: $(NAME)
 
-$(NAME)	: $(OBJS)
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
 %.o		: %.c
-		$(CC) $(FLAGS) -c $< -o $@
+		$(CC) $(FLAGS) -c -I ${HEADERS} $< -o $@
+	
+$(NAME)	: $(OBJS)
+		$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean	:
 		$(RM) $(OBJS)

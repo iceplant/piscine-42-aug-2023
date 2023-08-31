@@ -1,51 +1,63 @@
-int ft_strlen(char *str)
-{
-  int i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   functions.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/31 11:51:34 by rokamen-          #+#    #+#             */
+/*   Updated: 2023/08/31 12:06:02 by rokamen-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-  i = 0;
-  while (str[i])
-    i++;
-  return (i);
+#include "ft.h"
+#include <unistd.h>
+
+void	ft_putnbr(int nb);
+int		ft_strlen(char *str);
+
+void	add(int a, int b)
+{
+	ft_putnbr(a + b);
+	write(1, "\n", 1);
 }
 
-void add(int a, int b)
+void	sub(int a, int b)
 {
-  ft_putnbr(a + b);
-  write(1, "\n", 1);
+	ft_putnbr(a - b);
+	write(1, "\n", 1);
 }
 
-void sub(int a, int b)
+void	mult(int a, int b)
 {
-  ft_putnbr(a - b);
-  write(1, "\n", 1);
+	ft_putnbr(a * b);
+	write(1, "\n", 1);
 }
 
-void mult(int a, int b)
+void	div(int a, int b)
 {
-  ft_putnbr(a * b);
-  write(1, "\n", 1);
+	char	*error;
+
+	error = "Stop : division by zero\n";
+	if (b == 0)
+		write(1, error, ft_strlen(error));
+	else
+	{
+		ft_putnbr(a / b);
+		write(1, "\n", 1);
+	}
 }
 
-void div(int a, int b)
+void	mod(int a, int b)
 {
-  char *error = "Stop : division by zero\n";
-  if (b == 0)
-    write(1, error, ft_strlen(error));
-  else
-  {
-    ft_putnbr(a / b);
-    write(1, "\n", 1);
-  }
-}
+	char	*error;
 
-void mod(int a, int b)
-{
-  char *error = "Stop : modulo by zero\n";
-  if (b == 0)
-    write(1, error, ft_strlen(error));
-  else
-  {
-    ft_putnbr(a % b);
-    write(1, "\n", 1);
-  }
+	error = "Stop : modulo by zero\n";
+	if (b == 0)
+		write(1, error, ft_strlen(error));
+	else
+	{
+		ft_putnbr(a % b);
+		write(1, "\n", 1);
+	}
 }

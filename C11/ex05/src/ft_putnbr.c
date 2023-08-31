@@ -6,10 +6,11 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 20:16:51 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/10 13:03:19 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/31 11:55:41 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft.h"
 #include <unistd.h>
 
 void	ft_putnbr_helper(int nb)

@@ -6,7 +6,7 @@
 #    By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 18:47:14 by rokamen-          #+#    #+#              #
-#    Updated: 2023/08/30 18:55:13 by rokamen-         ###   ########.fr        #
+#    Updated: 2023/08/31 12:12:57 by rokamen-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ all		: $(NAME)
 %.o		: %.c
 		$(CC) $(FLAGS) -c -I ${HEADERS} $< -o $@
 	
-$(NAME)	: $(OBJS)
-		$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+$(NAME)	: ${OBJS}
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean	:
 		$(RM) $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 18:23:36 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/08/31 12:06:36 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/08/31 12:14:31 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,32 +43,6 @@ void	handle_operators(char op, int a, int b)
 		funcs[4](a, b);
 	else
 		write(1, "0\n", 2);
-}
-
-void	handle_valid_operators_with_an_o(char op, int a, int b)
-{
-	if (op == '+')
-		ft_putnbr(a + b);
-	else if (op == '-')
-		ft_putnbr(a - b);
-	else if (op == '*')
-		ft_putnbr(a * b);
-	else if (op == '/')
-	{
-		if (b == 0)
-			write(1, "Stop : division by zero", 23);
-		else
-			ft_putnbr(a / b);
-	}
-	else if (op == '%')
-	{
-		if (b == 0)
-			write(1, "Stop : modulo by zero", 21);
-		else
-			ft_putnbr(a % b);
-	}
-	else
-		write(1, "0", 1);
 }
 
 int	main(int argc, char **argv)
